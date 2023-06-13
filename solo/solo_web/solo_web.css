@@ -1,0 +1,435 @@
+@charset "utf-8";
+
+
+body {
+    font-family: 'Roboto', 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.2;
+    color: #202020;
+}
+span.block {
+    display: block;
+}
+.container {
+    background-color: #f3f3f3;
+}
+
+header { 
+    padding-top: 25px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 900;
+}
+header .logo {
+    /* overflow: hidden; */
+    text-indent: -999px;
+    background: url('./images/logo.png') no-repeat 0 0 / cover;
+    width: 68px;  
+    height: 50px;
+
+}
+header .menu {
+    margin-right: 25px;
+    display: inline-block;
+}
+
+header .menu .menu-btn{
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+header .menu .menu-btn span {
+    background-color: black;
+    height: 3px;
+}
+header .menu .menu-btn span.up-bar {
+    margin-bottom: 15px;
+    width: 30px;
+}
+header .menu .menu-btn span.down-bar {
+    text-align: right;
+    width: 19px;
+}
+
+main .screen {
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+main .screen .screen-wrapper {
+    margin-left: 25px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+main .screen .screen-wrapper h2{
+    font-size: 2.188rem;
+    font-weight: 900;
+}
+main .screen .screen-wrapper h2 span{
+    display: block;
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 2.5rem;
+    color: #f99d18;
+    font-weight: 400;
+}
+main .screen .screen-wrapper p {
+    margin-top: 20px;
+    font-size: 1.25rem;
+}
+
+main .slide-belt {
+    position: relative;
+    z-index: 100;
+    background-color: #202020;
+    overflow-X: hidden;
+    padding: 90px 0;
+}
+
+main .slide-belt .txt-line {
+    display: flex;
+    gap: 12px;
+    color: white;
+    font-size: 3.75rem;
+    white-space: nowrap;
+}
+main .slide-belt .txt-line span.jFran{
+    font-family: 'Jacques Francois', sans-serif;
+}
+main .slide-belt .txt-line span.dmsd {
+    font-family: 'DM Serif Display', sans-serif;
+}
+main .slide-belt .txt-line span.italic{
+    font-style: italic;
+}
+main .slide-belt .txt-line span.org{
+    color: #f99d1b;
+}
+main .slide-belt .txt-line span.latoItalic{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+main .slide-belt .img-line {
+    margin: 20px 0;
+    display: flex;
+    height: 150px;
+    gap: 30px;
+
+}
+main .slide-belt .img-line img {
+    aspect-ratio: 2 / 1;
+    height: 100%;
+}
+
+main .rotate-hexagon {
+    overflow: hidden;
+    position: relative;
+    height: 70vh;
+}
+main .rotate-hexagon .rotate-deco {
+    position: absolute;
+    background: url('./images/svg.svg') no-repeat 50% / cover;
+    width: 150vw;
+    aspect-ratio: 1 / 1;
+    left: -30%;
+    /* transform: translateX(50%); */
+    bottom: 5%;
+    animation: rolling 60s linear infinite;
+    transform-origin: 50% 50%;
+}
+@keyframes rolling {
+    100%{
+        transform:rotate(360deg); 
+    }
+}
+main .rotate-hexagon .rotate-deco img {
+    height: 100vh;
+}
+main .rotate-hexagon .text-wrapper {
+    /* width: 100%; */
+    text-align: center;
+    color: white;
+    padding: 100px 0;
+    position: relative;
+    z-index: 100;
+    background-color: #202020;
+}
+main .rotate-hexagon .text-wrapper h3 {
+    font-size: 1.375rem;
+    font-weight: 300;
+}
+main .rotate-hexagon .text-wrapper h3 span{
+    margin: 10px 0 32px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+main .rotate-hexagon .text-wrapper .btn {
+    display: inline-block;
+}
+main .rotate-hexagon .text-wrapper .btn a{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    font-size: 1.375rem;
+    font-weight: 700;
+    border: solid 1px white;
+    border-radius: 100px;
+    transition: 0.5s;
+    gap: 0px;
+}
+main .rotate-hexagon .text-wrapper .btn a:hover {
+    color: #202020;
+    background-color: #fff;
+    gap: 10px;
+}
+
+main .info-apply {
+    padding: 0 25px;
+    margin-bottom: 85px;
+}
+main .info-apply h3 {
+    font-size: 1.625rem;
+    font-weight: 800;
+}
+main .info-apply form fieldset {
+    border: 0;
+}
+main .info-apply form fieldset label {
+    display: block;
+}
+main .info-apply form fieldset legend {
+    text-indent: -9999px;
+}
+main .info-apply form fieldset .inputBox h4 {
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+main .info-apply form fieldset .inputBox h4.accent:after {
+    content: "*";
+    
+}
+main .info-apply form fieldset .inputBox {
+    margin: 20px 0;
+}
+main .info-apply form fieldset .inputBox input {
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 13px;
+    outline: 0;
+    border: solid 1px #d1d1d1;
+    background-color: #f3f3f3;
+    width: 100%;
+    transition: 0.5s;
+}
+main .info-apply form fieldset .inputBox input:focus {
+    background-color: #fff;
+    border: solid 1px #202020;
+}
+main .info-apply form fieldset .inputBox input::placeholder {
+    color: #c3c3c3;
+}
+main .info-apply form fieldset .inputBox .button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+main .info-apply form fieldset .inputBox label.half input {
+    display:none;
+}
+main .info-apply form fieldset .inputBox label.half span {
+    padding: 13px;
+    display: flex;
+    justify-content: center;
+    border: solid 1px #d1d1d1;
+    cursor:pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: 0.5s;
+}
+main .info-apply form fieldset .inputBox label.half input:checked + span {
+    background-color: #202020;
+    color: white;
+}
+main .info-apply form fieldset .inputBox select {
+    cursor: pointer;
+    appearance: none;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 13px;
+    outline: 0;
+    border: solid 1px #d1d1d1;
+    background-color: #f3f3f3;
+    width: 100%;
+    transition: 0.5s;
+    background: url('./images/selectBtn.png') no-repeat 95% 50% / 10px 8px;
+}
+main .info-apply form fieldset .inputBox select:focus {
+    background-color: #fff;
+    border: solid 1px #202020;
+}
+main .info-apply form fieldset .inputBox :is(#fileName1, #fileName2, #fileName3) {
+    color: #c3c3c3;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 13px;
+    outline: 0;
+    border: solid 1px #d1d1d1;
+    background-color: #f3f3f3;
+    width: 100%;
+    transition: 0.5s;
+    background: url('./images/fileAdd.png') no-repeat 95% 50% / 17px 17px;
+    cursor: pointer;
+}
+main .info-apply form fieldset .inputBox input[type=file] {
+    display: none;
+}
+/* main .info-apply form fieldset .inputBox input[type=file] {
+    background: url('./images/fileAdd.png') no-repeat 95% 50% / 17px 17px;
+    color: #c3c3c3;
+    cursor: pointer;
+}
+main .info-apply form fieldset .inputBox input[type=file]:focus {
+    border: solid 1px #d1d1d1;
+}
+main .info-apply form fieldset .inputBox input[type=file]::file-selector-button {
+    display: none;
+} */
+main .info-apply form fieldset > .inputBox textarea {
+    height: 30vh;
+    color: #c3c3c3;
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 13px;
+    outline: 0;
+    border: solid 1px #d1d1d1;
+    background-color: #f3f3f3;
+    width: 100%;
+    resize: none;
+    transition: 0.5s;
+}
+
+main .info-apply form fieldset > .inputBox textarea:focus {
+    background-color: #fff;
+    border: solid 1px #202020;
+}
+main .info-apply .agreement {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+main .info-apply .agreement label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+main .info-apply .agreement label span {
+    color: #c3c3c3;
+}
+main .info-apply .agreement label span.material-symbols-outlined {
+    font-size: 22px;
+    font-weight: 600;
+}
+main .info-apply .agreement label input {
+    display: none;
+}
+main .info-apply .agreement label input:checked + span.material-symbols-outlined {
+    color: #202020;
+}
+main .info-apply .agreement a.more {
+    display: flex;
+    align-items: center;
+    color: #c3c3c3;
+    font-size: 0.875rem;
+    transition: 0.5s;
+}
+main .info-apply .agreement a.more:hover {
+    color: #202020;
+}
+main .info-apply button {
+    margin: 20px 0;
+    outline : 0;
+    font-size: 1.375rem;
+    font-weight: 700;
+    height: 70px;
+    width: 100%;
+    background-color: #202020;
+    color: white;
+    cursor: pointer;
+}
+
+
+main .fixed-back {
+    height: 30vh;
+    background: url('./images/fixedBack.jpg') no-repeat 50% / cover;
+}
+
+
+/* footer */
+
+footer {
+    padding: 50px 25px
+}
+footer h2 {
+    line-height: 1;
+    font-size: 1.563rem;
+    font-weight: 900;
+} 
+footer h2 span {
+    font-weight: 400;
+    color: #f99d18;
+    font-family: 'DM Serif Display',sans-serif;
+    font-size: 1.875rem;
+}
+footer p {
+    margin: 20px 0;
+    font-size: 0.875rem;
+}
+footer p:nth-of-type(1) {
+    line-height: 1.7;
+}
+footer p:nth-of-type(2) {
+    line-height: 1.5;
+}
+footer p:nth-of-type(3) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+footer h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+footer .scroll-deco {
+    z-index: 900;
+    position: fixed;
+    bottom: -100px;
+    right: -100px;
+    width: 200px;
+    aspect-ratio: 1 / 1;
+    animation: rolling 60s linear infinite;
+}
+footer .scroll-deco img {
+    image-rendering: crisp-edges;
+}
+footer .scroll-deco .up-img{
+    position: absolute;
+    top: -6px;
+}
+footer .scroll-deco .down-img{
+    position: absolute;
+    transform: rotate(180deg);
+    bottom: 0;
+    bottom: -6px;
+    left: 1px;
+}

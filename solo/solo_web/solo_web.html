@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="히트짐 휘트니스센터">
+    <meta property="og:description" content="언제 어디서나 운동을 일상처럼">
+    <meta property="og:image" content="./images/fixedBack">
+    <meta property="og:url" content="https://ryukyounghyun.github.io/portfolio/solo/solo_web/solo_web.html">
+    <title>히트짐 휘트니스센터</title>
+    <link rel="stylesheet" href="../../common/style/minireset.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+    <link rel="manifest" href="./images/site.webmanifest">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="./solo_webFont.css">
+    <link rel="stylesheet" href="./solo_web.css">
+
+    <script defer src="./solo_web.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">히트짐</h1>
+            <div class="menu">
+                <div class="menu-btn">
+                    <span class="up-bar"></span>
+                    <span class="down-bar"></span>
+                </div>
+            </div>
+        </header>
+        <main>
+            <article class="screen">
+                <div class="screen-wrapper">
+                    <h2><span>hitgym</span>everywhere</h2>
+                    <p>언제 어디서나 운동을 일상처럼</p>
+                </div>
+            </article>
+            <article class="slide-belt">
+                <span class="txt-line"><span class="dmsd">MUSCLE</span><span class="jFran">PRESS</span><span class="latoItalic org">EXTETION</span><span class="dmsd org">CURL</span><span class="jFran org">RAISE</span><span class="latoItalic">PULL DOWN</span></span>
+                <div class="img-line">
+                    <img src="./images/slide1.jpg" alt="런닝머신에서 달리는 모습">
+                    <img src="./images/slide2.jpg" alt="사이클머신과 함께 지도하는 코치">
+                    <img src="./images/slide3.jpg" alt="헬스장의 아령들">
+                    <img src="./images/slide4.jpg" alt="헬스장의 목욕탕">
+                </div>
+                <span class="txt-line"><span class="jFran">SHRUG</span><span class="latoItalic org">ALTERNATE</span><span class="dmsd italic">BARBE</span><span class="jFran">STANCE</span><span class="latoItalic org">THUMBLESS</span></span class="dmsd org">PARALLEL</span>
+                </span>
+            </article>
+            <article class="rotate-hexagon">
+                <div class="rotate-deco"></div>
+                <div class="text-wrapper">
+                    <h3>히트짐 휘트니스센터<span class="block">운동은 새로운 삶의 시작입니다</span></h3>
+                    <div class="btn"><a href="">service<span class="material-symbols-outlined">
+                        arrow_forward
+                        </span></a></div>
+                </div>
+            </article>
+            <article class="info-apply">
+                <h3>지친 몸을 이끌고 <span class="block">운동을 오는 당신을 응원합니다</span></h3>
+                <form>
+                    <fieldset>
+                        <legend>정보 보내기</legend>
+                        <label class="inputBox">
+                            <h4 class="accent">이름</h4>
+                            <input type="text" name="username" id="username" placeholder="이름을 입력해주세요."></label>
+                        <label class="inputBox">
+                            <h4 class="accent">생년월일</h4>
+                            <input type="text" name="birth" id="birth" placeholder="6자리 숫자만 입력해주세요. (ex.970521)"></label>
+                        <div class="inputBox">
+                            <h4 class="accent">성별</h4>
+                            <div class="button-group">
+                            <label class="half"><input type="radio" name="sex" value="남자" checked><span>남자</span></label><label class="half" ><input type="radio" name="sex" value="여자"><span>여자</span></label></div></div>
+                        <label class="inputBox">
+                            <h4 class="accent">연락처</h4>
+                            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="숫자만 입력해주세요."></label>
+                        <label class="inputBox">
+                            <h4 class="accent">신장 및 체중</h4>
+                            <input type="text" name="wtHt" id="wtHt" placeholder="숫자만 입력해주세요. (ex.180/75)"></label>
+                        <label class="inputBox">
+                            <h4>사이트 방문 경로</h4>
+                            <select name="visitRoot" id="visitRoot">
+                                <option value="default">어떻게 알고 오셨나요?</option>
+                                <option value="blog">블로그</option>
+                                <option value="cafe">카페</option>
+                                <option value="insta">인스타</option>
+                                <option value="kakao">카카오</option>
+                                <option value="naver">네이버</option>
+                                <option value="else">기타</option>
+                            </select></label>
+                        <label class="inputBox">
+                            <h4>거주지역</h4>
+                            <input type="text" name="livePlace" id="livePlace" placeholder="구까지 입력해주세요. (ex. 수원시 팔달구)"></label>
+                        <label class="inputBox">
+                            <h4>본인사진등록1</h4>
+                            <input type="file" name="photo1" id="photo1" accept="image/png, image/jpeg">
+                            <div id="fileName1">파일을 첨부해 주세요</div>
+                        </label>
+                        <label class="inputBox">
+                            <h4>본인사진등록2</h4>
+                            <input type="file" name="photo2" id="photo2" accept="image/png, image/jpeg">
+                            <div id="fileName2">파일을 첨부해 주세요</div>
+                        </label>
+                        <label class="inputBox">
+                            <h4>본인사진등록3</h4>
+                            <input type="file" name="photo3" id="photo3" accept="image/png, image/jpeg">
+                            <div id="fileName3">파일을 첨부해 주세요</div>
+                        </label>
+                        <label class="inputBox">
+                            <h4>자기소개 및 다짐</h4>
+                            <textarea name="presentation" id="presentation"
+                            placeholder="자유롭게 자신을 소개해주시거나 다짐을 적어주세요."></textarea></label>
+                        <div class="agreement">
+                            <label>
+                                <input type="checkbox" name="agree" value="agree" checked>
+                                <span class="material-symbols-outlined">
+                            done
+                            </span>개인정보처리방침 동의 <span>(필수)</span></label>
+                            <a href="#" class="more">자세히보기</a>
+                        </div>
+                        <button type="submit">보내기</button>
+                    </fieldset>
+                </form>
+            </article>
+            <div class="fixed-back"></div>
+        </main>
+        <footer>
+            <h2><span class="block">hitgym</span>everywhere</h2>
+            <p>copyright &copy; 2022. 주식회사와이제이그룹. <span class="block">all rights reserved</span></p>
+            <h3>히트짐 휘트니스센터</h3>
+            <p>상호명: 주식회사와이제이그룹<br>대표자:최영진<br>사업자번호 : 514-81-85962<br>주소 : 대구광역시 조암남로42 트럼프스타 빌딩 4f</p>
+            <p>tel: 1522-0617<br>fax: 053-634-6937</p>
+            <div class="scroll-deco"><img src="./images/scrollDown.png" alt="" class="up-img"><img src="./images/scrollDown.png" alt="" class="down-img"></div>
+        </footer>
+    </div>
+
+</body>
+</html>
