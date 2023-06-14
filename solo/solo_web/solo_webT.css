@@ -1,0 +1,98 @@
+@charset "utf-8";
+
+header {
+  padding-top: 40px;
+}
+
+main .screen .screen-wrapper h2 {
+  font-size: 4.375rem;
+  line-height: 1;
+}
+main .screen .screen-wrapper h2 span {
+  font-size: 5rem;
+}
+main .screen .screen-wrapper p {
+  font-size: 1.625rem;
+}
+main .slide-belt .txt-line {
+  font-size: 4.063rem;
+  animation: slidL 240s linear infinite;
+}
+@keyframes slidL {
+  100% {
+      transform: translateX(-1545px)
+  }
+}
+main .slide-belt .txt-line.line2 {
+  animation: slidL2 260s linear infinite;
+}
+@keyframes slidL2 {
+  100% {
+      transform: translateX(-1785px)
+  }
+}
+main .slide-belt .img-line {
+  margin: 24px 0;
+  height: 215px;
+  animation: slidR 200s linear infinite;
+}
+@keyframes slidR {
+  0% {
+  }
+  100% {
+      transform: translateX(calc(460px * 4));
+  }
+}
+
+main .rotate-hexagon .text-wrapper h3 {
+  font-size: 2.813rem;
+}
+main .rotate-hexagon .text-wrapper h3 span {
+  font-size: 3.125rem;
+}
+main .rotate-hexagon .text-wrapper .btn a {
+  font-size: 1.563rem;
+}
+main .rotate-hexagon {
+  height: 80vh;
+}
+main .rotate-hexagon .rotate-deco {
+  width: 300vw;
+  left: -100%;
+  bottom: 10%;
+}
+
+main .info-apply {
+  padding: 0 60px;
+}
+main .info-apply h3 {
+  font-size: 2.188rem;
+}
+main .info-apply form fieldset{
+  gap: 0px 12px;;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr / repeat(3, 1fr);
+  grid-template-areas: 
+  "G1 G2 G3"
+  "G4 G5 ."
+  "G6 G7 ."
+  "G8 G9 G10"
+  "G11 G11 G11"
+  "G12 G12 G12 "
+  "G13 G13 G13";
+}
+
+main .info-apply form fieldset .inputBox.G1 {grid-area:G1;}
+main .info-apply form fieldset .inputBox.G2 {grid-area:G2;}
+main .info-apply form fieldset .inputBox.G3 {grid-area:G3;}
+main .info-apply form fieldset .inputBox.G4 {grid-area:G4;}
+main .info-apply form fieldset .inputBox.G5 {grid-area:G5;}
+main .info-apply form fieldset .inputBox.G6 {grid-area:G6;}
+main .info-apply form fieldset .inputBox.G7 {grid-area:G7;}
+main .info-apply form fieldset .inputBox.G8 {grid-area:G8;}
+main .info-apply form fieldset .inputBox.G9 {grid-area:G9;}
+main .info-apply form fieldset .inputBox.G10 {grid-area:G10;}
+main .info-apply form fieldset .inputBox.G11 {grid-area:G11;}
+main .info-apply form fieldset .agreement.G12 {
+  grid-area:G12;
+}
+main .info-apply form fieldset button.G13 {grid-area:G13;}
