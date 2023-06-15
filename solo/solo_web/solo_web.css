@@ -30,12 +30,12 @@ header {
     z-index: 800;
 }
 header .logo {
-    position: relative;
-    z-index: 900;
     text-indent: -999px;
     background: url('./images/logo.png') no-repeat 0 0 / cover;
-    width: 68px;  
+    width: 67px;  
     height: 50px;
+    position: relative;
+    z-index: 1;
     
 }
 header .logo a {
@@ -46,16 +46,17 @@ header .menu {
     margin-right: 25px;
     display: inline-block;
 }
+header .menu-pc { display: none;}
 header .menu #menu-check {
     display: none;
 }
 header .menu .menu-btn{
-    position: relative;
-    z-index: 900;
     display: flex;
     flex-flow: column;
     align-items: end;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 header .menu .menu-btn span {
     background-color: black;
@@ -67,11 +68,32 @@ header .menu #menu-check:checked + .menu-btn span{
 }
 header .menu .menu-btn span.up-bar {
     margin-bottom: 15px;
-    width: 30px;
+    width: 31px;
+}
+header .menu #menu-check:checked + .menu-btn span.up-bar {
+    margin: 0;
+    transform: rotate(-45deg) ;
 }
 header .menu .menu-btn span.down-bar {
     text-align: right;
     width: 18px;
+}
+header .menu #menu-check:checked + .menu-btn span.down-bar {
+    width: 31px;
+    transform: rotate(45deg) translate(-2px, -2px);
+}
+header .menu .black-screen {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    transform: translateY(-100vh);
+    transition: 0.5s;
+}
+header .menu #menu-check:checked ~ .black-screen {
+    transform: translateY(0);
 }
 header .menu .menu-screen {
     display: flex;
@@ -79,40 +101,31 @@ header .menu .menu-screen {
     justify-content: center;
     line-height: 1.3;
     font-weight: 500;
-    position:absolute;
-    left:0;
-    top:0;
-    background-color: transparent;
-    color: white;
-    width: 100%;
-    height: 100vh;
-    z-index: 800;
-    transition: 0.5s;
-    transform: translateX(-100%);
-}
-header .menu .menu-screen::before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100vh;
-    background-color: #202020;
+    position:fixed;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
     transition: 0.5s 0.5s;
-    transform: translateY(-100vh);
-}
-header .menu .menu-screen li a{
     opacity: 0;
-    transition: 0.5s 1s;
-    font-size: 2.813rem;
+    color: white;
 }
 header .menu #menu-check:checked ~ .menu-screen {
-    transform: translateX(0);
+    transform: translate(25px, -50%);
+    opacity: 1;
 }
-header .menu #menu-check:checked ~ .menu-screen::before {
-    transform: translateY(0);
+header .menu .menu-screen li {
+    opacity: 0;
+    transition: 0.3s 0.4s;
+}
+header .menu #menu-check:checked ~ .menu-screen li  {
+    opacity: 1;
+}
+header .menu .menu-screen li a{
+    font-size: 2.813rem;
+    transition: 0.3s 0.8s;
+    opacity: 0;
 }
 header .menu #menu-check:checked ~ .menu-screen li a {
-    transform: translateX(25px);
     opacity: 1;
 }
 main .screen {
@@ -296,9 +309,6 @@ main .info-apply form fieldset .inputBox h4 {
 }
 main .info-apply form fieldset .inputBox h4.accent:after {
     content: "*";
-}
-main .info-apply form fieldset .inputBox {
-    /* margin: 20px 0; */
 }
 main .info-apply form fieldset .inputBox input {
     font-family: 'Pretendard', sans-serif;

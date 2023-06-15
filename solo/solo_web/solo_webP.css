@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+header .menu-pc{
+  padding-right: 25px;
+  display: flex;
+  font-size: 1.563rem;
+  font-weight: 600;
+  gap: 2.717vw;
+}
+
+header .menu {
+  display: none;
+}
+
+main .screen .screen-wrapper h2 {
+  font-size:5.938rem;
+}
+main .screen .screen-wrapper h2 span {
+  font-size:6.875rem;
+}
+main .screen .screen-wrapper p {
+  font-size:1.875rem;
+}
+
+
+main .info-apply form fieldset{
+  gap: 0px 14px;;
+  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / repeat(4, 1fr);
+  grid-template-areas: 
+  "G1 G2 G3 G4"
+  "G5 G6 G7 ."
+  "G8 G9 G10 ."
+  "G11 G11 G11 G11"
+  "G12 G12 G12 G12"
+  "G13 G13 G13 G13";
+}
+
+
+footer h2 {
+  font-size: 5rem;
+}
+footer h2 span {
+  font-size: 5.625rem
+}
+footer h3 {
+  font-size: 1.875rem;
+}
+footer p {
+  margin: 35px 0;
+}
+footer p:nth-of-type(1) {
+  font-size: 1.125rem;
+}
