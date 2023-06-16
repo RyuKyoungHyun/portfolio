@@ -46,7 +46,9 @@ main .slide-belt .img-line {
       transform: translateX(calc(460px * 4));
   }
 }
-
+main .rotate-hexagon .text-wrapper {
+  padding-top: 140px;
+}
 main .rotate-hexagon .text-wrapper h3 {
   font-size: 2.813rem;
 }
@@ -57,12 +59,7 @@ main .rotate-hexagon .text-wrapper .btn a {
   font-size: 1.563rem;
 }
 main .rotate-hexagon {
-  height: 80vh;
-}
-main .rotate-hexagon .rotate-deco {
-  width: 300vw;
-  left: -100%;
-  bottom: 10%;
+  /* height: 80vh; */
 }
 
 main .info-apply {

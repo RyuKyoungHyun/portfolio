@@ -225,14 +225,14 @@ main .slide-belt .img-line img {
 main .rotate-hexagon {
     overflow: hidden;
     position: relative;
-    height: 70vh;
+    height: 65vh;
 }
 main .rotate-hexagon .rotate-deco {
     position: absolute;
     background: url('./images/hexa.svg') no-repeat 50% / cover;
-    width: 150vw;
+    width: 140vw;
     aspect-ratio: 1 / 1;
-    left: -30%;
+    left: -20%;
     /* transform: translateX(50%); */
     bottom: 5%;
     animation: rolling 60s linear infinite;
@@ -250,7 +250,7 @@ main .rotate-hexagon .text-wrapper {
     /* width: 100%; */
     text-align: center;
     color: white;
-    padding: 100px 0;
+    padding-top: 100px;
     position: relative;
     z-index: 100;
     background-color: #202020;

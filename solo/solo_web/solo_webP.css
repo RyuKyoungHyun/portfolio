@@ -7,6 +7,24 @@ header .menu-pc{
   font-weight: 600;
   gap: 2.717vw;
 }
+header .menu-pc li a {
+  position: relative;
+}
+
+header .menu-pc li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  height: 3px;
+  transition: 0.5s;
+  width: 0;
+  background-color: #f99d18;
+}
+header .menu-pc li a:hover::after {
+  width: 100%;
+
+}
 
 header .menu {
   display: none;
@@ -22,7 +40,15 @@ main .screen .screen-wrapper p {
   font-size:1.875rem;
 }
 
-
+main .slide-belt {
+  padding: 100px 0;
+}
+main .rotate-hexagon .text-wrapper {
+  padding-top: 180px;
+}
+main .rotate-hexagon {
+  height: 105vh;
+}
 main .info-apply form fieldset{
   gap: 0px 14px;;
   grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / repeat(4, 1fr);
@@ -36,6 +62,16 @@ main .info-apply form fieldset{
 }
 
 
+footer .title-copy {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 35px;
+}
+footer .title-copy p {
+  font-size: 1.125rem;
+  margin: 0;
+}
 footer h2 {
   font-size: 5rem;
 }
@@ -47,7 +83,4 @@ footer h3 {
 }
 footer p {
   margin: 35px 0;
-}
-footer p:nth-of-type(1) {
-  font-size: 1.125rem;
 }
