@@ -59,7 +59,7 @@ main .rotate-hexagon .text-wrapper .btn a {
   font-size: 1.563rem;
 }
 main .rotate-hexagon {
-  /* height: 80vh; */
+  height: 80vh;
 }
 
 main .info-apply {
