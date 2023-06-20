@@ -69,8 +69,8 @@ main .info-apply h3 {
   font-size: 2.188rem;
 }
 main .info-apply form fieldset{
-  gap: 0px 12px;;
-  grid-template: 1fr 1fr 1fr 1fr 1fr 1fr 1fr / repeat(3, 1fr);
+  gap: 18px 12px;
+  grid-template: 1fr 1fr 1fr 1fr 3fr 1fr 1fr / repeat(3, 1fr);
   grid-template-areas: 
   "G1 G2 G3"
   "G4 G5 ."
@@ -97,9 +97,13 @@ main .info-apply form fieldset .agreement.G12 {
 }
 main .info-apply form fieldset button.G13 {grid-area:G13;}
 
+main .info-apply form fieldset > .inputBox textarea {
+  height: 90%;
+}
 
 main .fixed-back {
   background: url('./images/fixedBack.jpg') no-repeat fixed 50% / cover;
+  height: 50vh;
 }
 
 

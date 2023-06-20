@@ -408,6 +408,7 @@ main .info-apply form fieldset > .inputBox textarea {
     width: 100%;
     resize: none;
     transition: 0.5s;
+    height: 30vh;
 }
 
 main .info-apply form fieldset > .inputBox textarea:focus {
