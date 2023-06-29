@@ -1,0 +1,122 @@
+@charset "utf-8";
+
+body {
+  font-family: 'NexonFootball', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+  min-width: 768px;
+}
+.project {
+  position: relative;
+  height: 100vh;
+}
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 30px solid #ff00bb;
+  width: 100%;
+  height: 100vh;
+}
+#project2 .outline {
+  border-color: #00ae4b;
+}
+#project3 .outline {
+  border-color: #ff4000;
+}
+#project4 .outline {
+  border-color: #ffc400;
+}
+#project5 .outline {
+  border-color: #2b58ff;
+}
+.content-box {
+  position: relative;
+  width: 45%;
+  margin: 0 auto;
+}
+figure img {
+  box-shadow: 0px 0px 20px 6px #ff00bb;
+}
+.txt-box {
+  width: 40%;
+  position: absolute;
+  left: calc(100% + 50px);
+  top: 0;
+}
+.block {
+  display: block;
+}
+
+header {
+  position: relative;
+  height: 78.958vw;
+  background-color: #003295;
+  padding-top: 5.208vw;
+}
+
+header .top-menu{
+  display: flex;
+  justify-content: center;
+  padding: 5px 0 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+header .top-menu li {
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding: 5px 30px;
+  border-radius: 100px;
+  font-size: 30px;
+}
+header .top-menu ol {
+  display: none;
+}
+
+header h2 {
+  text-transform: capitalize;
+  position: sticky;
+  font-size: 3.125vw;
+  font-weight: bold;
+  color: white;
+  margin-left: 4.167vw;
+}
+header h1 {
+  line-height: 0.8;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  font-size: 36.458vw;
+  display: flex;
+  gap: 9.375vw;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  color:#ffc400;
+}
+header h1 span:first-child {
+  color:#ff00bb
+}
+header h1 span:last-child {
+  color:#00ae4b
+}
+
+header img {
+  position: absolute;
+  top: 0;
+}
+
+header img:nth-of-type(1) {
+  width: 5vw;
+  top: 7.292vw;
+  left: 50%;
+  transform: translate(-50%);
+}
