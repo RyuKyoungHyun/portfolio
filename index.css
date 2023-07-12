@@ -25,7 +25,7 @@ figure figcaption {
   top: 0;
 }
 .underline {
-  top: calc(100vh - 1.563vw); 
+  top: calc(100vh - 1.563vw);
 }
 #project2 {
   border-color: #00ae4b;
@@ -50,7 +50,6 @@ figure figcaption {
 }
 #project4 .sticky {
   background-color: #ffc400;
-  
 }
 #project4 figure figcaption {
   color: #ffc400;
@@ -60,7 +59,6 @@ figure figcaption {
 }
 #project5 .sticky {
   background-color: #2b58ff;
-  
 }
 #project5 figure figcaption {
   color: #2b58ff;
@@ -145,13 +143,14 @@ header h1 span:last-child {
 
 header img {
   position: absolute;
+  display: inline-block;
 }
 
 header .deco1 {
   width: 5vw;
   top: 9.5%;
-  left: 50%;
-  transform: translate(-50%);
+  left: 47.5%;
+  z-index: 1;
 }
 header .deco2 {
   width: 7.5vw;
@@ -198,6 +197,7 @@ header .deco10 {
   width: 5vw;
   right: 11%;
   bottom: 40%;
+  z-index: 2;
 }
 header .deco11 {
   width: 7.552vw;
@@ -224,7 +224,51 @@ header .deco15 {
   left: 51%;
   bottom: 3.5%;
 }
-
+header .deco1.active {
+  transform: translateX(-50%) rotate(45deg);
+}
+header .deco2.active {
+  transform: translateY(0.781vw);
+}
+header .deco3.active {
+}
+header .deco4.active {
+}
+header .deco5.active {
+}
+header .deco6.active {
+}
+header .deco7.active {
+}
+header .deco8.active {
+}
+header .deco9.active {
+}
+header .deco10.active {
+  transform: rotate(45deg);
+}
+header .deco10:hover {
+  animation: move10 1s steps(2) infinite;
+}
+@keyframes move10 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+header .deco11.active {
+}
+header .deco12.active {
+}
+header .deco13.active {
+}
+header .deco14.active {
+}
+header .deco15.active {
+  animation: move;
+}
 header p {
   position: absolute;
   font-size: 2.083vw;
@@ -344,25 +388,26 @@ main #skill .title {
   color: white;
   top: 3.906vw;
   left: 2.604vw;
+  opacity: 0;
+  transform: translateY(2.604vw);
+  transition: 0.5s;
 }
 main #skill .skill-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4.167vw 8.073vw ;
+  gap: 4.167vw 8.073vw;
   margin-bottom: 3.906vw;
-}
-main #skill .stack {
 }
 main #skill .stack h3 {
   font-size: 3.125vw;
 }
 main #skill .stack h3::after {
-  content: "";
+  content: '';
   display: block;
   width: 100%;
-  height: 0.260vw;
+  height: 0.26vw;
   margin-top: 1.042vw;
-  background-color: #ff00bb;#ff00bb#ffc400#ff4000#00ae4b
+  background-color: #ff00bb;
 }
 main #skill .stack:nth-child(2) h3::after {
   background-color: #ffc400;
@@ -377,4 +422,64 @@ main #skill .stack .stack-list {
   margin: 2.083vw 3.385vw;
   line-height: 1.6;
   font-size: 1.563vw;
+}
+
+footer {
+  height: 51.25vw;
+  background-color: #003295;
+  position: relative;
+  color: white;
+}
+footer .title {
+  font-size: 10.417vw;
+  position: absolute;
+  color: white;
+  top: 3.906vw;
+  left: 2.604vw;
+  opacity: 0;
+  transform: translateY(2.604vw);
+  transition: 0.5s;
+}
+footer p {
+  position: absolute;
+  font-size: 3.125vw;
+  top: 9.896vw;
+  right: 15.625vw;
+}
+
+footer .about-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20.313vw;
+  margin: 0 6.771vw;
+}
+footer .mine .name {
+  font-size: 4.167vw;
+}
+footer .mine .name span {
+  margin: 1.563vw 0 6.771vw;
+}
+footer .mine .school {
+  font-size: 2.083vw;
+  line-height: 1.6;
+}
+
+footer .sns {
+  line-height: 1.6;
+  font-size: 2.083vw;
+  text-align: right;
+  display: flex;
+  flex-flow: column;
+  justify-content: end;
+  align-items: end;
+}
+footer .sns img {
+  width: 12.5vw;
+}
+footer .sns .git {
+  margin-top: 1.563vw;
+}
+footer .sns .git:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.521vw;
 }
