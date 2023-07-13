@@ -123,27 +123,104 @@ $(window).on('scroll', () => {
   }
 });
 
-// 메인 이미지 애니메이션
+// header 이미지 애니메이션
 let imgs = document.querySelectorAll('header img');
 imgs.forEach((img, idx) => {
-  const move = function () {
-    for (i = 0; i < 3; i++) {
-      setTimeout(function () {
-        $(img).addClass('active');
-      }, i * 2000 + 0);
-      setTimeout(function () {
-        $(img).removeClass('active');
-      }, i * 2000 + 1000);
-    }
-  };
-  img.addEventListener('mouseout', () => {
-    setTimeout(move);
+  img.addEventListener('mouseover', (a) => {
+    console.log(a.target);
+    a.target.classList.add('active');
+  });
+  img.addEventListener('mouseout', (a) => {
+    const remove = function () {
+      a.target.classList.remove('active');
+    };
+    setTimeout(remove, 2000);
   });
 });
 
-// $('header .deco1').on('mouseover', function (a) {
-//   a.target
-//     .animate({ transform: `rotate(45deg)` }, 1000, 'easeOutElastic')
-//     .animate({ transform: `rotate(0deg)` }, 2000, 'easeOutElastic')
-//     .animate({ transform: `rotate(45deg)` }, 3000, 'easeOutElastic');
-// });
+let h1s = document.querySelectorAll('header h1 span');
+h1s.forEach((h1, idx) => {
+  h1.addEventListener('mouseover', (a) => {
+    console.log(a.target);
+    a.target.classList.add('active');
+  });
+  h1.addEventListener('mouseout', (a) => {
+    const remove = function () {
+      a.target.classList.remove('active');
+    };
+    setTimeout(remove, 2000);
+  });
+});
+
+// 커서 이미지 바꾸기
+const clientWt = document.querySelector('#project1 .img-box').offsetWidth;
+const pro = document.querySelectorAll('.project');
+console.log(clientWt);
+pro.forEach((ject, idx) => {
+  $(ject)
+    .find('img')
+    .on('mousemove', (a) => {
+      // console.log(a.offsetX, clientWt / 2);
+      if (clientWt / 2 < a.offsetX) {
+        $(a.target).css({
+          cursor: `url("./images/nextCursor${idx + 1}.png") 20 25 , auto`,
+        });
+      } else {
+        $(a.target).css({
+          cursor: `url("./images/prevCursor${idx + 1}.png") 20 25 , auto`,
+        });
+      }
+    });
+
+  // 이미지 슬라이드
+  const proImg = ject.querySelectorAll('img');
+  proImg.forEach((a, idx) => {
+    // const length = $(a).parent().querySelectorAll('img');
+    $(a).on('click', (a) => {
+      if (clientWt / 2 < a.offsetX) {
+        if (idx < proImg.length - 1) {
+          $(a.target).css({
+            transform: `translateX(${-clientWt * (idx + 1)}px)`,
+          });
+          $(a.target)
+            .siblings()
+            .css({
+              transform: `translateX(${-clientWt * (idx + 1)}px)`,
+            });
+        }
+      } else {
+        if (idx > 0) {
+          $(a.target).css({
+            transform: `translateX(${-clientWt * (idx - 1)}px)`,
+          });
+          $(a.target)
+            .siblings()
+            .css({
+              transform: `translateX(${-clientWt * (idx - 1)}px)`,
+            });
+        }
+      }
+    });
+    // $(ject)
+    //   .find('img')
+    //   .on('click', (a) => {
+    //     if (clientWt / 2 < a.offsetX) {
+    //       $(a.target).css({
+    //         transform: `translateX(${-clientWt}px)`,
+    //       });
+    //       $(a.target)
+    //         .siblings()
+    //         .css({
+    //           transform: `translateX(${-clientWt}px)`,
+    //         });
+    //     } else {
+    //       $(a.target).css({
+    //         transform: `translateX(0px)`,
+    //       });
+    //       $(a.target).siblings().css({
+    //         transform: `translateX(0px)`,
+    //       });
+    //     }
+    //   });
+  });
+});

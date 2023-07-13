@@ -63,19 +63,19 @@ figure figcaption {
 #project5 figure figcaption {
   color: #2b58ff;
 }
-#project1 figure img {
+#project1 figure .img-box {
   box-shadow: 0px 0px 20px 6px #ff00bb;
 }
-#project2 figure img {
+#project2 figure .img-box {
   box-shadow: 0px 0px 20px 6px #00ae4b;
 }
-#project3 figure img {
+#project3 figure .img-box {
   box-shadow: 0px 0px 20px 6px #ff4000;
 }
-#project4 figure img {
+#project4 figure .img-box {
   box-shadow: 0px 0px 20px 6px #ffc400;
 }
-#project5 figure img {
+#project5 figure .img-box {
   box-shadow: 0px 0px 20px 6px #2b58ff;
 }
 .block {
@@ -140,6 +140,15 @@ header h1 span:first-child {
 header h1 span:last-child {
   color: #00ae4b;
 }
+header h1 span:first-child.active {
+  animation: updown 2s steps(2) infinite;
+}
+header h1 span:nth-child(2).active {
+  animation: diagonal2 2s steps(2) infinite;
+}
+header h1 span:last-child.active {
+  animation: leftright 1s steps(2) infinite;
+}
 
 header img {
   position: absolute;
@@ -166,11 +175,13 @@ header .deco4 {
   width: 6.042vw;
   top: 15%;
   left: 22.5%;
+  z-index: 2;
 }
 header .deco5 {
   width: 7.552vw;
   top: 23.5%;
   right: 39%;
+  z-index: 2;
 }
 header .deco6 {
   width: 7.708vw;
@@ -192,6 +203,7 @@ header .deco9 {
   width: 8.958vw;
   top: 40%;
   right: 28%;
+  z-index: 2;
 }
 header .deco10 {
   width: 5vw;
@@ -225,32 +237,56 @@ header .deco15 {
   bottom: 3.5%;
 }
 header .deco1.active {
-  transform: translateX(-50%) rotate(45deg);
+  animation: roll45 1s steps(2) infinite;
 }
+
 header .deco2.active {
-  transform: translateY(0.781vw);
+  animation: updown 1s steps(2) infinite;
+  z-index: 1;
 }
+
 header .deco3.active {
+  animation: diagonal1 0.8s steps(2) infinite;
 }
+
 header .deco4.active {
+  animation: updown 1s steps(2) infinite;
 }
+
 header .deco5.active {
+  animation: rollmove 2s steps(1) infinite;
 }
 header .deco6.active {
+  animation: rollmove 2s steps(1) infinite;
 }
 header .deco7.active {
+  animation: diagonal1 2s steps(2) infinite;
 }
 header .deco8.active {
+  animation: move1 2s steps(2) infinite;
 }
 header .deco9.active {
+  animation: rightleftFast 0.5s steps(2) infinite;
 }
 header .deco10.active {
-  transform: rotate(45deg);
+  animation: roll45 1s steps(2) infinite;
 }
-header .deco10:hover {
-  animation: move10 1s steps(2) infinite;
+header .deco11.active {
+  animation: rollmove 2s steps(1) infinite;
 }
-@keyframes move10 {
+header .deco12.active {
+  animation: rollmoveLeft 2s steps(1) infinite;
+}
+header .deco13.active {
+  animation: rollmove 2s steps(1) infinite;
+}
+header .deco14.active {
+  animation: updown 1s steps(2) infinite;
+}
+header .deco15.active {
+  animation: leftrightFast 0.5s steps(2) infinite;
+}
+@keyframes roll45 {
   0% {
     transform: rotate(0deg);
   }
@@ -258,16 +294,83 @@ header .deco10:hover {
     transform: rotate(90deg);
   }
 }
-header .deco11.active {
+@keyframes rollmove {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(1.25vw, -1.25vw);
+  }
+  50% {
+    transform: translate(2.5vw, 0vw);
+  }
+  75% {
+    transform: translate(1.25vw, 1.25vw);
+  }
 }
-header .deco12.active {
+@keyframes rollmoveLeft {
+  0%,
+  100% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(-1.25vw, -1.25vw);
+  }
+  50% {
+    transform: translate(-2.5vw, 0vw);
+  }
+  75% {
+    transform: translate(-1.25vw, 1.25vw);
+  }
 }
-header .deco13.active {
+@keyframes updown {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(1.25vw);
+  }
 }
-header .deco14.active {
+@keyframes leftright {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(1.25vw);
+  }
 }
-header .deco15.active {
-  animation: move;
+@keyframes leftrightFast {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(2.5vw);
+  }
+}
+@keyframes rightleftFast {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-2.5vw);
+  }
+}
+@keyframes diagonal1 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(1.25vw, 1.25vw);
+  }
+}
+@keyframes diagonal2 {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(-1.25vw, 1.25vw);
+  }
 }
 header p {
   position: absolute;
@@ -319,6 +422,7 @@ main .side-menu {
   z-index: 99;
   opacity: 0;
   transition: 0.3s;
+  pointer-events: none;
 }
 main .side-menu li {
   margin: 0;
@@ -336,11 +440,16 @@ main figure {
   width: 43vw;
   margin: 0 auto;
   padding: 5.208vw 0;
+  /* overflow: hidden; */
 }
 main figure figcaption {
   font-size: 2.604vw;
   font-weight: 700;
   margin-bottom: 0.833vw;
+}
+main figure .img-box {
+  overflow: hidden;
+  display: flex;
 }
 main .txt-box {
   position: absolute;
