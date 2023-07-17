@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+
+body {
+    font-family: 'Montserrat', 'Roboto', 'NanumSquare', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.7;
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+a {
+    display: block;
+}
+.roboto {
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+section {
+    padding: 6.771vw 0;
+}
+
+main .main-title-deco > h3 {
+    font-weight: 700;
+    font-size: var(--font-size32);
+    position: relative;
+}
+main .main-title-deco > h3::before {
+    content: "our service model";
+    font-size: var(--font-size12);
+    font-weight: 500;
+    color: var(--color-gray);
+    position: absolute;
+    left: 50%; bottom: 100%;
+    margin-bottom: 5px;
+    transform: translateX(-50%);
+}
+main .main-title-deco > h3::after  {
+    content: "";
+    display: block;
+    background-color: var(--back-orange);
+    width:100px; height: 1px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+}

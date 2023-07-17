@@ -5,7 +5,11 @@ body {
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
 }
-
+.ramche {
+  font-family: 'Ramche', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
 .project {
   position: relative;
   border-right: solid 1.563vw #ff00bb;
@@ -418,61 +422,384 @@ main .side-menu {
   position: fixed;
   left: 5.729vw;
   bottom: 4.167vw;
-  font-size: 2.604vw;
+  font-size: 2.344vw;
   z-index: 99;
   opacity: 0;
   transition: 0.3s;
   pointer-events: none;
 }
 main .side-menu li {
-  margin: 0;
+  margin-left: 0;
+  margin-bottom: 0;
 }
 main .side-menu li a {
   color: #003295;
   fill: #003295;
   opacity: 0.5;
 }
+main .side-menu li a svg {
+  width: 1.563vw;
+}
 main .side-menu li a:hover {
   opacity: 1;
 }
-
+/* 프로젝트 형식 */
+main .content-box .imsi-image {
+  height: 100vh;
+}
 main figure {
-  width: 43vw;
-  margin: 0 auto;
-  padding: 5.208vw 0;
-  /* overflow: hidden; */
+  width: 65vw;
+  margin-left: 25vw;
+  padding: 5.208vw 0 4.104vw;
 }
 main figure figcaption {
+  display: flex;
+  justify-content: space-between;
   font-size: 2.604vw;
   font-weight: 700;
   margin-bottom: 0.833vw;
 }
 main figure .img-box {
   overflow: hidden;
+  /* width: 100%; */
+  display: flex;
+  aspect-ratio: 2 / 1;
+}
+main .text {
+  padding-bottom: 10.416vw;
+  margin-left: 25vw;
+  color: #003295;
+}
+main .text .img-explain {
+  font-size: 1.25vw;
+  display: flex;
+  gap: 1.563vw;
+}
+main .text .img-explain .period > span,
+main .text .img-explain .tech > span {
+  padding-left: 0.521vw;
+}
+main .text .img-explain .tech span {
+  margin-right: 0.521vw;
+  vertical-align: top;
+}
+main .text .page-explain {
+  padding-top: 4.167vw;
+}
+main .text .page-explain .grid {
+  display: grid;
+  grid-template-columns: 7.813vw 1fr;
+}
+main .text .page-explain .grid:not(:first-child) {
+  margin-top: 6.25vw;
+}
+main .text .page-explain .grid h3 {
+  font-size: 1.823vw;
+  font-weight: bold;
+}
+main .text .page-explain .description {
+  font-family: 'Jamsil', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  color: #202020;
+  font-size: 1.25vw;
+  border-left: 0.104vw solid #ff79db;
+  padding-left: 3.125vw;
+  font-weight: 200;
+  line-height: 1.5;
+}
+main .text .page-explain .description .flex-center {
+  display: flex;
+  align-items: center;
+  gap: 0.521vw;
+}
+main .text .page-explain .description .high {
+  fill: #ff79db;
+  width: 0.625vw;
+  aspect-ratio: 1/2;
+}
+main .text .page-explain .description .medium {
+  fill: #ff79db;
+  width: 0.781vw;
+}
+main .text .page-explain .description .low::before {
+  content: url('./images/desc_low.svg');
+  display: inline-block;
+  width: 0.729vw;
+  margin-right: 0.521vw;
+}
+main .text .page-explain .description .enter {
+  padding-left: 2.604vw;
+}
+main .text .page-explain .description h5 {
+  padding-left: 2.083vw;
+}
+main .text .page-explain .description p {
+  padding-left: 3.125vw;
+}
+main .text .page-explain .description > :not(:first-child) {
+  margin-top: 1.042vw;
+}
+main .text .page-explain .description h4 {
+  font-size: 1.406vw;
+  font-weight: 500;
+}
+main .text .page-explain .description h4:not(:first-child) {
+  margin-top: 2.084vw;
+}
+main .text .page-explain .description .color-box {
   display: flex;
 }
-main .txt-box {
-  position: absolute;
-  width: 19.063vw;
-  top: 0;
-  right: 0;
-  margin: 8.854vw 5.208vw;
+main .text .page-explain .description .color {
+  display: grid;
+  place-items: center;
+  font-weight: 500;
+  background-color: #202020;
+  width: 6.771vw;
+  aspect-ratio: 13/9;
+  font-size: 1.042vw;
 }
-main .txt-box h2 {
-  font-size: 2.344vw;
-  font-weight: bold;
-  margin-bottom: 2.604vw;
+main .text .page-explain .description .color:nth-child(1) {
+  color: #fff;
 }
-main .txt-box .text h3 {
-  font-size: 2.2vw;
+main .text .page-explain .description .color:nth-child(2) {
+  background-color: #f3f3f3;
 }
-main .txt-box .text span {
-  font-size: 1.8vw;
+main .text .page-explain .description .color:nth-child(3) {
+  background-color: #c3c3c3;
+}
+main .text .page-explain .description .color:nth-child(4) {
+  background-color: #f99d18;
+}
+main .text .page-explain .description .font-line {
+  font-size: 1.563vw;
+}
+main .text .page-explain .description .font-line span {
+  font-weight: 400;
+}
+main .text .page-explain .description .font-line > span:not(:first-child) {
+  margin-left: 1.042vw;
+}
+main .text .page-explain .description .font-line span:nth-child(1) {
+  font-family: 'DM Serif Display', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+main .text .page-explain .description .font-line span:nth-child(2) {
+  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+main .text .page-explain .description .font-line span:nth-child(3) {
+  font-family: 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+main .text .page-explain .description .font-line span:nth-child(4) {
+  font-family: 'Jacques Francois', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
+}
+main .text .page-explain .description .font-line span:nth-child(5) {
+  font-family: 'Lato', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+main .text .page-explain .description .concept {
+  font-size: 1.406vw;
+  font-weight: 500;
+}
+main .text .page-explain .description .concept span {
+  padding-left: 2vw;
+}
+main .text .page-explain .description .accent {
+  color: #ff00bb;
   font-weight: 700;
-  color: #ff6fd9;
 }
-main .txt-box .text {
-  font-size: 1.25vw;
+main .text .page-explain .description .accent:before {
+  display: none;
+}
+main .text .page-explain .publishing .description .indent {
+  padding-left: 2vw;
+}
+main .text .page-explain .publishing .description .low::before {
+  margin-right: 1.042vw;
+}
+main .text .page-explain .problem .description .block {
+  padding-left: 1.25vw;
+}
+main .project .site-enter {
+  display: grid;
+  place-items: center;
+  width: 13.021vw;
+  aspect-ratio: 5/2;
+  font-size: 1.458vw;
+  font-weight: 700;
+  position: absolute;
+  bottom: 5.208vw;
+  right: 2.604vw;
+  color: #202020;
+  transition: 1.5s;
+}
+main .project .site-enter:hover {
+  color: #ff79db;
+}
+main .project .site-enter .button-deco {
+  position: absolute;
+  display: block;
+  background: url('./images/site_button1.png') no-repeat 50% / cover;
+  width: 100%;
+  height: 100%;
+  transition: 1.5s;
+}
+main .project .site-enter:hover .button-deco {
+  transform: perspective(100px) rotateX(180deg);
+}
+
+/* project 개인 영역 */
+/* 2 */
+main #project2 .site-enter .button-deco {
+  background-image: url('./images/site_button2.png');
+}
+main #project2 .site-enter:hover {
+  color: #3dd07c;
+}
+main #project2 .text .page-explain .description {
+  border-color: #3dd07c;
+}
+main #project2 .text .page-explain .description .high,
+main #project2 .text .page-explain .description .medium {
+  fill: #3dd07c;
+}
+main #project2 .text .page-explain .description .accent {
+  color: #00ae4b;
+}
+/*  3 */
+main #project3 .site-enter .button-deco {
+  background-image: url('./images/site_button3.png');
+}
+main #project3 .site-enter:hover {
+  color: #ff7445;
+}
+main #project3 .text .page-explain .description {
+  border-color: #ff7445;
+}
+main #project3 .text .page-explain .description .high,
+main #project3 .text .page-explain .description .medium {
+  fill: #ff7445;
+}
+main #project3 .text .page-explain .description .accent {
+  color: #ff4000;
+}
+main #project3 .text .page-explain .description .color-box .color:nth-child(1) {
+  background-color: #141414;
+}
+main #project3 .text .page-explain .description .color-box .color:nth-child(2) {
+  background-color: #1c1c1c;
+  color: white;
+}
+main #project3 .text .page-explain .description .color-box .color:nth-child(3) {
+  background-color: #f7f7f7;
+}
+main #project3 .text .page-explain .description .color-box .color:nth-child(4) {
+  background-color: #ff5519;
+}
+main #project3 .text .page-explain .description .color-box .color:nth-child(5) {
+  background-color: #ffb400;
+}
+main #project3 .text .page-explain .description .font-line span:nth-child(1) {
+  font-family: 'Montserrat', sans-serif;
+}
+main #project3 .text .page-explain .description .font-line span:nth-child(2) {
+  font-family: 'Roboto', sans-serif;
+}
+main #project3 .text .page-explain .description .font-line span:nth-child(3) {
+  font-family: 'Noto Sans KR';
+}
+main #project3 .text .page-explain .description .font-line span:nth-child(4) {
+  font-family: 'NanumSquare';
+}
+/* 4 */
+main #project4 .site-enter .button-deco {
+  background-image: url('./images/site_button4.png');
+}
+main #project4 .site-enter:hover {
+  color: #ffc400;
+}
+main #project4 .text .page-explain .description {
+  border-color: #ffc400;
+}
+main #project4 .text .page-explain .description .high,
+main #project4 .text .page-explain .description .medium {
+  fill: #ffc400;
+}
+main #project4 .text .page-explain .description .accent {
+  color: #ffc400;
+}
+main #project4 .text .page-explain .description .color-box .color:nth-child(1) {
+  background-color: #f0f0f0;
+  color: black;
+}
+main #project4 .text .page-explain .description .color-box .color:nth-child(2) {
+  background-color: #ffad99;
+}
+main #project4 .text .page-explain .description .font-line span:nth-child(1) {
+  font-family: 'Helvetica-95-Black', sans-serif;
+}
+main #project4 .text .page-explain .description .font-line span:nth-child(2) {
+  font-family: 'Gyeonggi', sans-serif;
+}
+main #project4 .text .page-explain .process ol,
+main #project4 .text .page-explain .process ol li {
+  margin: 0;
+}
+main #project4 .text .page-explain .process ol li span {
+  padding-left: 0.521vw;
+}
+/* 5 */
+main #project5 .site-enter .button-deco {
+  background-image: url('./images/site_button5.png');
+}
+main #project5 .site-enter:hover {
+  color: #718fff;
+}
+main #project5 .text .page-explain .description {
+  border-color: #718fff;
+}
+main #project5 .text .page-explain .description .high,
+main #project5 .text .page-explain .description .medium {
+  fill: #718fff;
+}
+main #project5 .text .page-explain .description .accent {
+  color: #2b58ff;
+}
+main #project5 .text .page-explain .description .color-box .color:nth-child(1) {
+  background-color: #bec9ff;
+  color: black;
+}
+main #project5 .text .page-explain .description .color-box .color:nth-child(2) {
+  background-color: #8d86e2;
+}
+main #project5 .text .page-explain .description .color-box .color:nth-child(3) {
+  background-color: #4d6cff;
+  color: white;
+}
+main #project5 .text .page-explain .description .color-box .color:nth-child(4) {
+  background-color: #484848;
+  color: white;
+}
+main #project5 .text .page-explain .design .description .block {
+  padding-left: 1.25vw;
+}
+
+main #project5 .text .page-explain .process ol,
+main #project5 .text .page-explain .process ol li {
+  margin: 0;
+}
+main #project5 .text .page-explain .process ol li span {
+  padding-left: 0.521vw;
 }
 
 main .title {

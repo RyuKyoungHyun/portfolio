@@ -1,9 +1,9 @@
+const vH = document.documentElement.clientHeight;
+const headerHt = document.querySelector('header').offsetHeight;
+const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
+const skillTop = document.querySelector('#skill').offsetTop;
 $(window).on('scroll', () => {
   // project side-menu 보이게 하기
-  const vH = document.documentElement.clientHeight;
-  const headerHt = document.querySelector('header').offsetHeight;
-  const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
-  const skillTop = document.querySelector('#skill').offsetTop;
   if (headerHt - sideMenuTop < scrollY && scrollY < skillTop - sideMenuTop) {
     $('main .side-menu').css({
       opacity: 1,
@@ -127,7 +127,7 @@ $(window).on('scroll', () => {
 let imgs = document.querySelectorAll('header img');
 imgs.forEach((img, idx) => {
   img.addEventListener('mouseover', (a) => {
-    console.log(a.target);
+    // console.log(a.target);
     a.target.classList.add('active');
   });
   img.addEventListener('mouseout', (a) => {
@@ -141,7 +141,7 @@ imgs.forEach((img, idx) => {
 let h1s = document.querySelectorAll('header h1 span');
 h1s.forEach((h1, idx) => {
   h1.addEventListener('mouseover', (a) => {
-    console.log(a.target);
+    // console.log(a.target);
     a.target.classList.add('active');
   });
   h1.addEventListener('mouseout', (a) => {
@@ -155,8 +155,9 @@ h1s.forEach((h1, idx) => {
 // 커서 이미지 바꾸기
 const clientWt = document.querySelector('#project1 .img-box').offsetWidth;
 const pro = document.querySelectorAll('.project');
-console.log(clientWt);
+// console.log(clientWt);
 pro.forEach((ject, idx) => {
+  const proImg = ject.querySelectorAll('img');
   $(ject)
     .find('img')
     .on('mousemove', (a) => {
@@ -171,11 +172,14 @@ pro.forEach((ject, idx) => {
         });
       }
     });
+  // $(a).on('mousemove', (a) => {});
 
   // 이미지 슬라이드
-  const proImg = ject.querySelectorAll('img');
+  // 페이지 넘버
   proImg.forEach((a, idx) => {
-    // const length = $(a).parent().querySelectorAll('img');
+    $(a).parent().siblings('figcaption').find('.total').text(proImg.length);
+    const nowText = $(a).parent().siblings('figcaption').find('.now');
+    // console.log(nowText);
     $(a).on('click', (a) => {
       if (clientWt / 2 < a.offsetX) {
         if (idx < proImg.length - 1) {
@@ -187,6 +191,7 @@ pro.forEach((ject, idx) => {
             .css({
               transform: `translateX(${-clientWt * (idx + 1)}px)`,
             });
+          nowText.text(`${idx + 2}`);
         }
       } else {
         if (idx > 0) {
@@ -198,29 +203,9 @@ pro.forEach((ject, idx) => {
             .css({
               transform: `translateX(${-clientWt * (idx - 1)}px)`,
             });
+          nowText.text(`${idx}`);
         }
       }
     });
-    // $(ject)
-    //   .find('img')
-    //   .on('click', (a) => {
-    //     if (clientWt / 2 < a.offsetX) {
-    //       $(a.target).css({
-    //         transform: `translateX(${-clientWt}px)`,
-    //       });
-    //       $(a.target)
-    //         .siblings()
-    //         .css({
-    //           transform: `translateX(${-clientWt}px)`,
-    //         });
-    //     } else {
-    //       $(a.target).css({
-    //         transform: `translateX(0px)`,
-    //       });
-    //       $(a.target).siblings().css({
-    //         transform: `translateX(0px)`,
-    //       });
-    //     }
-    //   });
   });
 });
