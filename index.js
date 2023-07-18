@@ -3,6 +3,7 @@ const headerHt = document.querySelector('header').offsetHeight;
 const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
 const skillTop = document.querySelector('#skill').offsetTop;
 $(window).on('scroll', () => {
+  const skillTop = document.querySelector('#skill').offsetTop;
   // project side-menu 보이게 하기
   if (headerHt - sideMenuTop < scrollY && scrollY < skillTop - sideMenuTop) {
     $('main .side-menu').css({
@@ -156,30 +157,60 @@ h1s.forEach((h1, idx) => {
 const clientWt = document.querySelector('#project1 .img-box').offsetWidth;
 const pro = document.querySelectorAll('.project');
 // console.log(clientWt);
-pro.forEach((ject, idx) => {
+// console.log(clientWt);
+
+pro.forEach((ject, proIdx) => {
+  $(`.main-menu ol li:nth-child(${proIdx + 1}) a`).on('click', (p) => {
+    p.preventDefault();
+    scrollTo({
+      top: ject.offsetTop,
+      behavior: 'smooth',
+    });
+  });
   const proImg = ject.querySelectorAll('img');
   $(ject)
     .find('img')
     .on('mousemove', (a) => {
-      // console.log(a.offsetX, clientWt / 2);
+      // console.log(a);
       if (clientWt / 2 < a.offsetX) {
         $(a.target).css({
-          cursor: `url("./images/nextCursor${idx + 1}.png") 20 25 , auto`,
+          cursor: `url("./images/nextCursor${proIdx + 1}.png") 20 25 , auto`,
         });
       } else {
         $(a.target).css({
-          cursor: `url("./images/prevCursor${idx + 1}.png") 20 25 , auto`,
+          cursor: `url("./images/prevCursor${proIdx + 1}.png") 20 25 , auto`,
         });
       }
     });
-  // $(a).on('mousemove', (a) => {});
 
   // 이미지 슬라이드
   // 페이지 넘버
   proImg.forEach((a, idx) => {
     $(a).parent().siblings('figcaption').find('.total').text(proImg.length);
     const nowText = $(a).parent().siblings('figcaption').find('.now');
-    // console.log(nowText);
+    // $(a).on('mousemove', (i) => {
+    //   if (clientWt / 2 < i.offsetX) {
+    //     if (idx == proImg.length) {
+    //       $(i.target).css({
+    //         cursor: `url("./images/nextCursor${proIdx + 1}op.png") 20 25 , auto`,
+    //       });
+    //     } else {
+    //         $(i.target).css({
+    //           cursor: `url("./images/nextCursor${proIdx + 1}.png") 20 25 , auto`,
+    //         });
+    //       }
+    //   } else {
+    //     if (idx == 0) {
+    //       $(i.target).css({
+    //         cursor: `url("./images/prevCursor${proIdx + 1}op.png") 20 25 , auto`,
+    //       });
+    //     } else {
+    //       $(i.target).css({
+    //       cursor: `url("./images/prevCursor${proIdx + 1}.png") 20 25 , auto`,
+    //     });
+    //   }
+    //   }
+    // })
     $(a).on('click', (a) => {
       if (clientWt / 2 < a.offsetX) {
         if (idx < proImg.length - 1) {
@@ -208,4 +239,113 @@ pro.forEach((ject, idx) => {
       }
     });
   });
+});
+
+// 위로버튼
+$('.up-button').on('click', () => {
+  scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
+});
+const clientHeight = document.documentElement.clientHeight;
+const headHeight = document.querySelector('header').offsetHeight;
+console.log(headHeight);
+$(window).on('scroll', () => {
+  if (scrollY < headHeight - clientHeight) {
+    $('.up-button').css({
+      pointerEvents: 'none',
+    });
+  } else {
+    $('.up-button').css({
+      pointerEvents: 'auto',
+    });
+    if (skillTop - clientHeight < scrollY) {
+      $('.up-button svg').css({
+        fill: `#fff`,
+      });
+    } else {
+      $('.up-button svg').css({
+        fill: `#003295`,
+      });
+    }
+  }
+});
+// if (scrollY < headHeight - clientHeight) {
+
+// } else {
+//   if (skillTop - clientHeight < scrollY) {
+//     $('.up-button svg').css({
+//       fill: `#fff`,
+//     });
+//   }
+// }
+
+// top-menu 리스트 보기
+$('.top-menu li:nth-child(1)').on('click', (li) => {
+  $(li.currentTarget).toggleClass('listOn');
+  $(li.currentTarget).siblings().removeClass('listOn');
+  $('.team-fixed').hide();
+  $('.solo-fixed').toggle();
+});
+$('.top-menu li:nth-child(2)').on('click', (li) => {
+  $(li.currentTarget).toggleClass('listOn');
+  $(li.currentTarget).siblings().removeClass('listOn');
+  $('.solo-fixed').hide();
+  $('.team-fixed').toggle();
+});
+
+// 버튼 프로젝트 이동
+const topList = document.querySelectorAll('.fixed li');
+// console.log(topList);
+pro.forEach((ject, proIdx) => {
+  topList.forEach((list, liN) => {
+    if (proIdx == liN) {
+      $(list).on('click', (p) => {
+        // console.log(list);
+        p.preventDefault();
+        $('.top-menu li').removeClass('listOn');
+        $('.list-fix').hide();
+        scrollTo({
+          top: ject.offsetTop,
+          behavior: 'smooth',
+        });
+      });
+    }
+  });
+});
+$(window).on('scroll', () => {
+  // console.log(scrollY);
+});
+const skillcTop = document.querySelector('#skill').clientTop;
+console.log(skillTop, scrollY);
+console.log($('#skill').offset().top);
+$('.top-menu li:nth-child(3)').on('click', (p) => {
+  console.log(skillTop, scrollY);
+  console.log($('#skill').offset().top);
+  // console.log($('#skill'));
+  p.preventDefault();
+  scrollTo({
+    top: $('#skill').offset().top,
+    behavior: 'smooth',
+  });
+});
+const aboutTop = document.querySelector('#about').offsetTop;
+$('.top-menu li:nth-child(4)').on('click', (p) => {
+  p.preventDefault();
+  scrollTo({
+    top: aboutTop,
+    behavior: 'smooth',
+  });
+});
+
+// 스크롤에 따른 탑메뉴 없애기 나타내기
+let nowY = 0;
+addEventListener('scroll', () => {
+  if (nowY < scrollY) {
+    $('.top-menu').addClass('show');
+  } else {
+    $('.top-menu').removeClass('show');
+  }
+  nowY = scrollY;
 });

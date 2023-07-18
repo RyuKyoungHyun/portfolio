@@ -22,6 +22,7 @@ body {
   background-color: #ff00bb;
   z-index: 9;
 }
+
 figure figcaption {
   color: #ff00bb;
 }
@@ -88,33 +89,118 @@ figure figcaption {
 a {
   display: block;
 }
+.container .up-button {
+  position: fixed;
+  bottom: 4vh;
+  right: 2.2vw;
+  width: 4.01vw;
+  aspect-ratio: 78 / 85;
+  z-index: 99;
+  cursor: pointer;
+  pointer-events: none;
+}
+.container .up-button svg {
+  fill: #003295;
+  opacity: 0.5;
+}
+.container .up-button svg:hover {
+  opacity: 1;
+}
+.container .top-menu {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  color: #000;
+  vertical-align: middle;
+  z-index: 9999;
+  transition: 0.3s;
+}
+.container .top-menu.show {
+  transform: translate(-50%, -3.646vw);
+}
+.container .top-menu li {
+  background-color: #fff;
+  font-family: 'Inter', sans-serif;
+  padding: 0.26vw 1.563vw;
+  border-radius: 100px;
+  font-size: 1.563vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+  gap: 0.5vw;
+  cursor: pointer;
+}
+.container .top-menu li:hover,
+.container .top-menu li:hover svg {
+  color: #ff4000;
+  fill: #ff4000;
+}
+.container .top-menu li:nth-child(1).listOn,
+.container .top-menu li:nth-child(2).listOn {
+  color: #fff;
+  fill: #fff;
+  background-color: #ff4000;
+}
+.container .top-menu li:nth-child(1).listOn svg,
+.container .top-menu li:nth-child(2).listOn svg {
+  fill: #fff;
+  transform: rotate(180deg);
+}
+.container .top-menu li svg {
+  fill: #7c7c7c;
+  width: 0.885vw;
+}
+.container .list-fix {
+  /* display: none; */
+  position: fixed;
+  background-color: #ffffffb7;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.container .solo-fixed {
+  display: none;
+}
+.container .team-fixed {
+  display: none;
+}
+.container .list-fix ol,
+.container .list-fix ol li {
+  margin: 0;
+}
+.container .team-fixed ol,
+.container .solo-fixed ol {
+  position: absolute;
+  z-index: 999;
+  top: 5.208vw;
+  left: 35%;
+  font-size: 5vw;
+  font-family: 'inter', sans-serif;
+  font-weight: 300;
+}
+.container .team-fixed ol a:hover,
+.container .solo-fixed ol a:hover {
+  color: #ff4000;
+  opacity: 1;
+}
+.container .team-fixed ol {
+  left: 42%;
+}
+
 header {
   position: relative;
   height: 78.958vw;
   background-color: #003295;
   padding-top: 5.208vw;
   color: white;
-}
-
-header .top-menu {
-  display: flex;
-  justify-content: center;
-  padding: 5px 0 20px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #000;
-}
-header .top-menu li {
-  background-color: #fff;
-  font-family: 'Inter', sans-serif;
-  padding: 0.26vw 1.563vw;
-  border-radius: 100px;
-  font-size: 1.563vw;
-}
-header .top-menu ol {
-  display: none;
 }
 
 header h2 {
@@ -432,6 +518,10 @@ main .side-menu li {
   margin-left: 0;
   margin-bottom: 0;
 }
+main .side-menu li span {
+  color: #003295;
+  opacity: 0.5;
+}
 main .side-menu li a {
   color: #003295;
   fill: #003295;
@@ -442,6 +532,10 @@ main .side-menu li a svg {
 }
 main .side-menu li a:hover {
   opacity: 1;
+}
+main .side-menu li:last-child a {
+  margin-top: 1vw;
+  display: inline-block;
 }
 /* 프로젝트 형식 */
 main .content-box .imsi-image {
@@ -473,6 +567,7 @@ main .text {
 main .text .img-explain {
   font-size: 1.25vw;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.563vw;
 }
 main .text .img-explain .period > span,
@@ -509,7 +604,7 @@ main .text .page-explain .description {
   border-left: 0.104vw solid #ff79db;
   padding-left: 3.125vw;
   font-weight: 200;
-  line-height: 1.5;
+  line-height: 1.8;
 }
 main .text .page-explain .description .flex-center {
   display: flex;
@@ -639,7 +734,8 @@ main .project .site-enter {
   font-weight: 700;
   position: absolute;
   bottom: 5.208vw;
-  right: 2.604vw;
+  /* right: 2.604vw; */
+  right: 56.604vw;
   color: #202020;
   transition: 1.5s;
 }
@@ -758,6 +854,22 @@ main #project4 .text .page-explain .process ol li {
 main #project4 .text .page-explain .process ol li span {
   padding-left: 0.521vw;
 }
+main #project4 .text .page-explain .description .block {
+  padding-left: 1.25vw;
+}
+main #project4 .text .page-explain .design .description .block {
+  padding-left: 0;
+}
+main #project4 .text .page-explain .problem .description .accent {
+  display: inline-block;
+  font-size: 1.5vw;
+  color: #000;
+}
+main #project4 .text .page-explain .problem .description .accent:hover {
+  color: #f99d18;
+  text-decoration: underline;
+  text-underline-offset: 0.521vw;
+}
 /* 5 */
 main #project5 .site-enter .button-deco {
   background-image: url('./images/site_button5.png');
@@ -790,8 +902,10 @@ main #project5 .text .page-explain .description .color-box .color:nth-child(4) {
   background-color: #484848;
   color: white;
 }
-main #project5 .text .page-explain .design .description .block {
+main #project5 .text .page-explain .description .block {
   padding-left: 1.25vw;
+}
+main .text .page-explain .description .low {
 }
 
 main #project5 .text .page-explain .process ol,
@@ -800,6 +914,16 @@ main #project5 .text .page-explain .process ol li {
 }
 main #project5 .text .page-explain .process ol li span {
   padding-left: 0.521vw;
+}
+main #project5 .text .page-explain .result .description .accent {
+  display: inline-block;
+  font-size: 1.5vw;
+  color: #000;
+}
+main #project5 .text .page-explain .result .description .accent:hover {
+  color: #718fff;
+  text-decoration: underline;
+  text-underline-offset: 0.521vw;
 }
 
 main .title {

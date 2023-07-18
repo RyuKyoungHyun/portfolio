@@ -30,24 +30,59 @@
 
 <body>
   <div class="container">
+    <ul class="top-menu">
+      <li><span>solo</span>
+        <svg viewBox="0 0 17 15" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.5 15L16.7272 0.75H0.272758L8.5 15Z" />
+        </svg>
+      </li>
+      <li><span>team</span>
+        <svg viewBox="0 0 17 15" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.5 15L16.7272 0.75H0.272758L8.5 15Z" />
+        </svg>
+      </li>
+      <li><a href="#skill">skill</a></li>
+      <li><a href="#about">about</a></li>
+    </ul>
+    <div class="fixed">
+      <div class="list-fix solo-fixed">
+        <ol>
+          <li><a href="#project1">project 1</a></li>
+          <li><a href="#project2">project 2</a></li>
+          <li><a href="#project3">project 3</a></li>
+        </ol>
+      </div>
+      <div class="list-fix team-fixed">
+        <ol>
+          <li><a href="#project4">project 4</a></li>
+          <li><a href="#project5">project 5</a></li>
+        </ol>
+      </div>
+    </div>
+    <div class="up-button">
+      <svg viewBox="0 0 78 85" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <rect x="38.7778" width="15" height="15" transform="rotate(45 38.7778 0)" />
+          <rect x="52.9199" y="14.1426" width="15" height="15" transform="rotate(45 52.9199 14.1426)" />
+          <rect x="67.062" y="28.2842" width="15" height="15" transform="rotate(45 67.062 28.2842)" />
+        </g>
+        <g>
+          <rect x="38.7778" y="35" width="15" height="15" transform="rotate(45 38.7778 35)" />
+          <rect x="52.9199" y="49.1426" width="15" height="15" transform="rotate(45 52.9199 49.1426)" />
+          <rect x="67.062" y="63.2842" width="15" height="15" transform="rotate(45 67.062 63.2842)" />
+        </g>
+        <g>
+          <rect x="35.3555" y="24.748" width="15" height="15" transform="rotate(135 35.3555 24.748)" />
+          <rect x="21.2134" y="38.8906" width="15" height="15" transform="rotate(135 21.2134 38.8906)" />
+        </g>
+        <g>
+          <rect x="35.3555" y="59.748" width="15" height="15" transform="rotate(135 35.3555 59.748)" />
+          <rect x="21.2134" y="73.8906" width="15" height="15" transform="rotate(135 21.2134 73.8906)" />
+        </g>
+      </svg>
+
+    </div>
     <header>
-      <ul class="top-menu">
-        <li>solo
-          <ol>
-            <li><a href="#project1">project1</a></li>
-            <li><a href="#project2">project2</a></li>
-            <li><a href="#project3">project3</a></li>
-          </ol>
-        </li>
-        <li>team
-          <ol>
-            <li><a href="#project4">project4</a></li>
-            <li><a href="#project5">project5</a></li>
-          </ol>
-        </li>
-        <li><a href="#skill">skill</a></li>
-        <li><a href="#about">about</a></li>
-      </ul>
       <h2>web<span class="block">publishing</span></h2>
       <h1><span>r</span><span>k</span><span>h</span></h1>
       <p class="hello"><span class="block">안녕하세요!</span>류경현의 웹퍼블리셔 포트폴리오입니다.</p>
@@ -202,6 +237,7 @@
               <path d="M6.89054 19.2145H0.000135422L16.1971 38.4895H23.7139L6.89054 19.2145Z" />
             </svg>
             project 5</a></li>
+        <li><a href="#skill">to Skill</a> <span>/</span> <a href="#about">about me</a></li>
       </ol>
       <article class="project" id="project1">
         <div class="title"><span>Solo</span></div>
@@ -588,8 +624,21 @@
                   <span class="ramche">[</span><span>JavaScript</span><span class="ramche">]</span>
                 </span>
               </div>
+              <div class="team">
+                프로젝트명 : 킹받조 /
+                팀원 : 변준현, 윤연정, 조연희, 류경현
+              </div>
             </div>
             <div class="page-explain">
+              <div class="grid pt">
+                <h3>프로젝트 소개</h3>
+                <div class="description">
+                  <span class="low">테디베어 박물관을 소개하는 사이트를 좀 더 깔끔하고 예쁘게 만들며 박물관에 대한 정보를<span class="block">더욱 쉽게 얻을 수 있고
+                      테디베어의 따뜻한 느낌을 더욱 주도록
+                      리디자인하였습니다.</span>
+                  </span>
+                </div>
+              </div>
               <div class="grid goal">
                 <h3>작업목표</h3>
                 <div class="description">
@@ -692,6 +741,67 @@
                       주었습니다.</span><span class="block">좀 더 자연스러운 흐름을 위해 마이너스 값을 통해 </span><span class="block">섹션보다 좀 더
                       위에서 사라지고 나타나도록 했습니다.</span>
                   </p>
+                  <div class="pdf">
+                    <a href="./images/프로젝트_기술서.pdf" class="accent" target="_blank">기술서 PDF</a>
+                  </div>
+                </div>
+              </div>
+              <div class="grid result">
+                <h3>프로젝트 결과</h3>
+                <div class="description">
+                  <span class="low">기존 사이트보다 꾸미는 효과도 많아지고 많았던 정보들을 좀 더 간략하고 보기 편하게 구성했다고 봅니다. <span class="block">특히 각
+                      페이지간의 이동이 매우 쉬워졌다고
+                      보입니다.</span><span class="block">테디베어라는 귀여운 이미지에 부합하게 효과들을 구현하였고, git을 통한 팀원들 간의 소통이 잘
+                      되었습니다.</span>
+                </div>
+              </div>
+              <div class="grid less">
+                <h3>부족한 점</h3>
+                <div class="description">
+                  <span class="low">디자인을 하면서 기존 테디베어 사이트보다 예쁘게는 만들었지만, <span class="block">구조 자체가 단순해서 JavaScript를 많이
+                      구현하고 싶었습니다.</span><span class="block">나름 들어갔지만
+                      더욱 화려하게 만들 수 있지는 않았을까 라는 생각이 들고,</span><span class="block">시간이 더 있었다면 반응형까지 만들 수 있지 않았을까라는 아쉬움이 조금
+                      남았습니다.</span>
+                </div>
+              </div>
+              <div class="grid good">
+                <h3>잘한 점</h3>
+                <div class="description">
+                  <span class="low">기존에 구상했던 효과들을 코드를 이용하여 대부분 구현을 해냈다는 것에 대해서는 잘한 점이라고 생각합니다. <span class="block">각
+                      페이지를 서로 검토해보며 부족한 부분이나
+                      잘된 것에 대한 </span><span class="block">피드백도 팀원들 간에 잘 이루어졌고, 협업을 잘 이루어져 좋았습니다.</span>
+
+                </div>
+              </div>
+              <div class="grid learn">
+                <h3>배운 점</h3>
+                <div class="description">
+                  <span class="low">중간에 수업을 듣지 못한 때의 내용에 대해서 숙지가 덜 되있었는데, <span class="block">다른 팀원들의 페이지들의 JavaScript들을
+                      보며 슬라이드 부분에 대한 내용에
+                      대해서</span><span class="block">배울 수 있는 좋은 기회였습니다. 그리고 swiper 부분에서 제가 보지 못했던 값들을 이용해</span><span
+                      class="block">레이아웃을 조정하는 모습에서 정말 많이 공부해야한다는 것을 깨달았습니다.</span>
+                </div>
+              </div>
+              <div class="grid role">
+                <h3>프로젝트 소감</h3>
+                <div class="description">
+                  <span class="low">
+                    모바일을 리디자인할 때와는 다른 재미들이 있었습니다. <span class="block">웹사이트를 만들면서 퍼블리싱 가이드를 쓰는 것도 새로웠고, 쓰기 위해서 찾아본 다른
+                      회사들의 </span><span class="block">가이드들을 보면서 실무에서는
+                      세세한 부분들까지도 서식으로 검토를 하는 것을 알게 되었습니다.</span><span class="block">그리고 가이드를 참고하며 코드를 작성하는 것도
+                      재미있었습니다.</span><span class="block"></span>
+                  </span>
+                  <span class="low">
+                    HTML/CSS를 구성하는 것은 정말 빨리 끝났던 거 같은데, 빨리 끝난 만큼 <span class="block">JavaScript에 집중할 수 있어서 좋았던 거 같습니다. 수업
+                      동안 배웠던 것을 참고하며 </span><span class="block">다양한
+                      효과들을 주는 것이 제 생각대로 이뤄질 때마다 너무 뿌듯하고 구현시키고는</span><span class="block">제가 만든
+                      효과들을 스크롤하거나 클릭하며 몇 번씩 반복해서 봤던 거 같습니다.</span>
+                  </span>
+                  <span class="low">이번에 사이트를 만들면서 스크립트를 직접 내 생각대로 구현을 해보았습니다. <span class="block">구현을 하고나서 수업에서 더 추가적인
+                      것을 들을 때마다 새로운 것을 배우는
+                      것에 대해서</span><span class="block">더 흥미롭고 가슴이 두근거렸습니다. 그래서 앞으로 더 새로운 것을 배우는 것이 기대됩니다.</span><span
+                      class="block"></span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -725,8 +835,21 @@
                   <span class="ramche">[</span><span>JavaScript</span><span class="ramche">]</span>
                 </span>
               </div>
+              <div class="team">
+                팀명 : 이거왜안되조 /
+                팀원 : 김나현, 이수민, 진태식, 류경현
+              </div>
             </div>
             <div class="page-explain">
+              <div class="grid pt">
+                <h3>프로젝트 소개</h3>
+                <div class="description">
+                  <span class="low">‘한국청소년 상담복지개발원’에서 출시한 앱으로 위기청소년의 자립을 돕는 ‘자립해냄’
+                    이라는 앱입니다.<span class="block">매체 이용에 민감한 청소년들이 주 사용자임에도 앱의 디자인과 정보
+                      를 얻는 과정이</span><span class="block">불편하고 정확하지 않아 이를 리디자인하기로 하였습니다</span><span class="block"></span>
+                  </span>
+                </div>
+              </div>
               <div class="grid process">
                 <h3>진행과정</h3>
                 <div class="description">
@@ -787,63 +910,69 @@
                   <h4 class="accent">청소년들의 감수성에 맞춘 색상 선정과 필요한 정보의 습득이 용이하도록 하였습니다.</h4>
                 </div>
               </div>
-              <!-- <div class="grid publishing">
-                <h3>퍼블리싱</h3>
+              <div class="grid result">
+                <h3>프로젝트 결과</h3>
                 <div class="description">
-                  <ul>
-                    <li class="low">미디어쿼리 사용
-                      <ul class="indent">
-                        <li>mobile 우선 작성</li>
-                        <li>- mobile : &lt;link href="./solo_web.css"&gt;</li>
-                        <li>- tablet : &lt;link media="(width >= 768p x)" href="./solo_webT.css"&gt;</li>
-                        <li>- pc : &lt;link media="(width >= 1280px)" href="./solo_webP.css"&gt; </li>
-                      </ul>
-                    </li>
-                    <li class="low">CSS를 이용한 메뉴 슬라이드 구현</li>
-                    <li class="low">sns 바로가기 버튼 브라우저 맞춰 위치 고정</li>
-                    <li class="low">CSS: hover 이벤트 효과</li>
-                    <li class="low">form, input을 이용한 개인정보입력양식 구성</li>
-                    <li class="low">Js를 통해 삽입한 이미지파일명 출력</li>
-                  </ul>
+                  <span class="low">초반부 리디자인 앱을 선정하는 것에 있어 어려움이 많았지만, 선정된 이후는 원활히 진행되었습니다. <span class="block">기존 앱보다
+                      가시성이 더 좋게 만들었고, 페이지 및 카테고리 간소화로 정보 습득의 경로를 줄였습니다.</span><span class="block">그로 인해 저희 개선방향이었던 ‘정보
+                      습득을 용이하게 한다’를 보여줄 수 있었습니다.</span><span class="block">특히 팀원들 간의 소통이 잘 되었다는 점이 프로젝트를 무사히 마치는 것에 큰 힘이
+                      되었습니다.</span></span>
+                  <div class="pdf">
+                    <a href="./images/프로젝트_기술서.pdf" class="accent" target="_blank">발표 PPT</a>
+                  </div>
                 </div>
-              </div> -->
-              <!-- <div class="grid problem">
-                <h3>문제<span class="block">및 해결</span></h3>
+              </div>
+              <div class="grid less">
+                <h3>부족한 점</h3>
                 <div class="description">
-                  <h4 class="flex-center"><svg class="high" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 14H2V12H4V10H6V6H4V4H2V2H0V-9.53674e-07H4V2H6V4H8V6H10V10H8V12H6V14H4V16H0V14Z" />
-                    </svg>&lt;input type=”file”&gt; 의 삽입이미지 파일명 html에 출력하기</h4>
-                  <h5 class="flex-center">
-                    <svg class="medium" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
-                    </svg>
-                    Promblem 1. value값 활용
-                  </h5>
-                  <p class="low">HTML로 placeholder를 통해서 나타낼 수 없을까 싶었지만 작동되지 않았습니다.<span class="block">그래서 CSS의
-                      transitiion 값을 통해서도 구현할 수 있을까 고민을 하다가</span><span class="block">JavaScript를 통해 주로 나타낸다는 것을
-                      들었습니다.</span><span class="block">input 요소에 값을 입력하면서 일일이 console에 출력하면서 ‘files’라는 객체를 알게
-                      되었습니다.</span><span class="block">그리고 그 객체 속에 name이라는 키의 값을 출력하도록 코드를 작성했습니다.</span>
-                  </p>
-                  <h4 class="flex-center"><svg class="high" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 14H2V12H4V10H6V6H4V4H2V2H0V-9.53674e-07H4V2H6V4H8V6H10V10H8V12H6V14H4V16H0V14Z" />
-                    </svg>돌아가는 육각형 만들기</h4>
-                  <h5 class="flex-center"><svg class="medium" viewBox="0 0 16 15" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
-                    </svg>Promblem 1. 육각형 만들기</h5>
-                  <p class="low">처음엔 육각형을 &lt;div&gt; 태그를 통해 만들고 싶었습니다.<span class="block">하지만 border를 없애면서 만드는 태그의
-                      도형으로는 모서리가 둥근 도형을 만드는 것이</span><span class="block">불가능하다고 여겨져 이미지파일을 이용하는 것으로 해결했습니다.</span>
-                  </p>
-                  <h5 class="flex-center"><svg class="medium" viewBox="0 0 16 15" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
-                    </svg>Promblem 2. 위치 고정시키기</h5>
-                  <p class="low">animation과 함께 position을 통해 위치를 잡아주면 된다고 생각했습니다.<span class="block">position값을 먹으면
-                      height가 사라져 부모 요소를 계속 넘치는 이미지를 제어하기 위해</span><span class="block">넘치는 부분의 height를 viwhieght로 주었고,
-                      반응형과 포지션의 left 값을 활용해서</span><span class="block">이미지가 움직이는 것을 최대한 방지했습니다.</span>
-                  </p>
+                  <span class="low">팀원들 간의 배려가 너무 좋은 탓인지 진행과정에 있어서 많은 아이디어가 나왔을 때 <span class="block">하나를 결정하는 것에 있어서 많은
+                      시간을 소비했던 점이 아쉬웠습니다.</span><span class="block">해당 진행과정
+                      마다 시간을 쓰는 것에 있어서 제한된 시간 안에 빠르게 해결하는 것에 </span><span class="block">있어서 좀 미흡
+                      했다고 봅니다. 전체적으로 시간에 쫓겼다는 것이 많이 아쉬운 부분이었습니다.</span>
+                  </span>
                 </div>
-              </div> -->
+              </div>
+              <div class="grid good">
+                <h3>잘한 점</h3>
+                <div class="description">
+                  <span class="low">메인 디자인, 스타일을 정할 때 브레인스토밍의 형식으로 다양한 아이디어를 모았다는
+                    것이 좋았습니다. <span class="block">다른 앱들에 비해서 유저 니즈를 파악함에 있어서 힘들었던 것을</span> <span class="block">팀리더님이 직접
+                      조사를 하며 사용자에 대한 이해도를 더욱 높일 수 있었습니다</span></span>
+                </div>
+              </div>
+              <div class="grid learn">
+                <h3>배운 점</h3>
+                <div class="description">
+                  <span class="low">미흡했던 디자인 부분에서 많이 배웠습니다. 여백이 얼마나 중요한지, <span class="block">레이아웃의 배치
+                      는 어떻게 해야 하는지, 그리고 색상의 조합에 대해서도 이외에도 많은 부분을</span><span class="block">프로젝트
+                      전보다 많이 알게 되었습니다. 팀원들과 원활히 소통을 하면서</span><span class="block">제가 부족한 부분을 알고
+                      협업이 얼마나 중요한지를 한 번 더 깨닫는 기회였습니다.</span></span>
+
+                </div>
+              </div>
+              <div class="grid review">
+                <h3>프로젝트 소감</h3>
+                <div class="description">
+                  <span class="low">
+                    이번 프로젝트를 진행하면서 생각지 못하게 발표를 하는 경우가 자주 발생했습니다. <span class="block">졸업 이후 학교가 아닌 곳에서의 발표는
+                      처음이었습니다.</span><span class="block">발표를 하면 떠는 저에게 팀원들이 많이 응원해 주었고 너무 고마웠습니다.</span><span
+                      class="block">다 같이 열심히 만든 결과물이고 응원해주는 만큼 발표를 잘 하고 싶었으나</span><span class="block"> </span><span
+                      class="block">다음
+                      발표 의 기회가 생긴다면 그때는 지금보다 더 잘해내고 싶습니다.</span>
+                  </span>
+                  <span class="low">
+                    하나의 결과물을 만들기 위해 팀원들과 이렇게 열심히 소통하는 경험을 정말 오랜만이었습니다. <span class="block">팀원들에게 도움도 많이 받고
+                      배운 것도 많아서 너무 좋았고,</span><span class="block">저도 그만큼 그들에게 도움이 되었다면 다행이라고 생각됩니다.</span>
+                  </span>
+                  <span class="low">프로젝트의 내용물 면에서는 시간이 부족했던 점들이 아쉽습니다.<span class="block">앱의 메인
+                      흐름만
+                      제작하기 바빴는데 마이페이지나 북마크 페이지같은</span><span class="block"> 상세한 페이지들을 제작해서 보여줄 수 없었던 것이 아쉽습니다.</span>
+                  </span>
+                  <span class="low">시간이 부족했지만 팀원 모두가 머리를 모아 고민하던 시간들이
+                    괴롭다기보다는 즐거웠던 것 같습니다.<span class="block">힘을 합쳐 하나의 결과물을 만들었다는 것이 뿌듯했고, 다음 팀
+                      작업도 기대됩니다</span></span>
+                </div>
+              </div>
             </div>
             <a href="" class="site-enter">사이트 바로가기<span class="button-deco"><span></a>
           </div>
