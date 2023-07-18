@@ -1,7 +1,7 @@
 const vH = document.documentElement.clientHeight;
 const headerHt = document.querySelector('header').offsetHeight;
 const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
-const skillTop = document.querySelector('#skill').offsetTop;
+// const skillTop = document.querySelector('#skill').offsetTop;
 $(window).on('scroll', () => {
   const skillTop = document.querySelector('#skill').offsetTop;
   // project side-menu 보이게 하기
@@ -314,10 +314,8 @@ pro.forEach((ject, proIdx) => {
     }
   });
 });
-$(window).on('scroll', () => {
-  // console.log(scrollY);
-});
 const skillcTop = document.querySelector('#skill').clientTop;
+const skillTop = document.querySelector('#skill').offsetTop;
 console.log(skillTop, scrollY);
 console.log($('#skill').offset().top);
 $('.top-menu li:nth-child(3)').on('click', (p) => {
