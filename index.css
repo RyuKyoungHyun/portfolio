@@ -774,7 +774,7 @@ main .text .page-explain .review .description .low:not(:first-child) {
 }
 main .text .page-explain .description .block {
   padding-left: 1.25vw;
-  margin-top: 1vw;
+  margin-top: 0.2vw;
 }
 main .text .page-explain .publishing .description li:not(:first-child) {
   margin-top: 1.4vw;

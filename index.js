@@ -1,8 +1,7 @@
-const vH = document.documentElement.clientHeight;
-const headerHt = document.querySelector('header').offsetHeight;
-const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
-const skillTop = document.querySelector('#skill').offsetTop;
 $(window).on('scroll', () => {
+  const vH = document.documentElement.clientHeight;
+  const headerHt = document.querySelector('header').offsetHeight;
+  const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
   const skillTop = document.querySelector('#skill').offsetTop;
   // project side-menu 보이게 하기
   if (headerHt - sideMenuTop < scrollY && scrollY < skillTop - sideMenuTop) {
@@ -156,7 +155,6 @@ h1s.forEach((h1, idx) => {
 // 커서 이미지 바꾸기
 const clientWt = document.querySelector('#project1 .img-box').offsetWidth;
 const pro = document.querySelectorAll('.project');
-
 // 헤더 버튼 이동
 pro.forEach((ject, proIdx) => {
   $(`.main-menu ol li:nth-child(${proIdx + 1}) a`).on('click', (p) => {
@@ -195,29 +193,7 @@ pro.forEach((ject, proIdx) => {
   proImg.forEach((a, idx) => {
     $(a).parent().siblings('figcaption').find('.total').text(proImg.length);
     const nowText = $(a).parent().siblings('figcaption').find('.now');
-    // $(a).on('mousemove', (i) => {
-    //   if (clientWt / 2 < i.offsetX) {
-    //     if (idx == proImg.length) {
-    //       $(i.target).css({
-    //         cursor: `url("./images/nextCursor${proIdx + 1}op.png") 20 25 , auto`,
-    //       });
-    //     } else {
-    //         $(i.target).css({
-    //           cursor: `url("./images/nextCursor${proIdx + 1}.png") 20 25 , auto`,
-    //         });
-    //       }
-    //   } else {
-    //     if (idx == 0) {
-    //       $(i.target).css({
-    //         cursor: `url("./images/prevCursor${proIdx + 1}op.png") 20 25 , auto`,
-    //       });
-    //     } else {
-    //       $(i.target).css({
-    //       cursor: `url("./images/prevCursor${proIdx + 1}.png") 20 25 , auto`,
-    //     });
-    //   }
-    //   }
-    // })
+
     $(a).on('click', (a) => {
       if (clientWt / 2 < a.offsetX) {
         if (idx < proImg.length - 1) {
@@ -259,6 +235,7 @@ const clientHeight = document.documentElement.clientHeight;
 const headHeight = document.querySelector('header').offsetHeight;
 console.log(headHeight);
 $(window).on('scroll', () => {
+  const skillTop = document.querySelector('#skill').offsetTop;
   if (scrollY < headHeight - clientHeight) {
     $('.up-button').css({
       pointerEvents: 'none',
@@ -278,15 +255,6 @@ $(window).on('scroll', () => {
     }
   }
 });
-// if (scrollY < headHeight - clientHeight) {
-
-// } else {
-//   if (skillTop - clientHeight < scrollY) {
-//     $('.up-button svg').css({
-//       fill: `#fff`,
-//     });
-//   }
-// }
 
 // top-menu 리스트 보기
 $('.top-menu li:nth-child(1)').on('click', (li) => {
