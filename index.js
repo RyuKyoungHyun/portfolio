@@ -1,7 +1,7 @@
 const vH = document.documentElement.clientHeight;
 const headerHt = document.querySelector('header').offsetHeight;
 const sideMenuTop = document.querySelector('main .side-menu').offsetTop;
-// const skillTop = document.querySelector('#skill').offsetTop;
+const skillTop = document.querySelector('#skill').offsetTop;
 $(window).on('scroll', () => {
   const skillTop = document.querySelector('#skill').offsetTop;
   // project side-menu 보이게 하기
@@ -156,11 +156,18 @@ h1s.forEach((h1, idx) => {
 // 커서 이미지 바꾸기
 const clientWt = document.querySelector('#project1 .img-box').offsetWidth;
 const pro = document.querySelectorAll('.project');
-// console.log(clientWt);
-// console.log(clientWt);
 
+// 헤더 버튼 이동
 pro.forEach((ject, proIdx) => {
   $(`.main-menu ol li:nth-child(${proIdx + 1}) a`).on('click', (p) => {
+    p.preventDefault();
+    scrollTo({
+      top: ject.offsetTop,
+      behavior: 'smooth',
+    });
+  });
+  // 사이드 버튼이동 프로젝트만
+  $(`.side-menu li:nth-child(${proIdx + 1}) a`).on('click', (p) => {
     p.preventDefault();
     scrollTo({
       top: ject.offsetTop,
@@ -314,14 +321,10 @@ pro.forEach((ject, proIdx) => {
     }
   });
 });
-const skillcTop = document.querySelector('#skill').clientTop;
-const skillTop = document.querySelector('#skill').offsetTop;
-console.log(skillTop, scrollY);
-console.log($('#skill').offset().top);
+
+// const title = document.querySelector('#skill .title').offsetHeight;
+// skill about 이동
 $('.top-menu li:nth-child(3)').on('click', (p) => {
-  console.log(skillTop, scrollY);
-  console.log($('#skill').offset().top);
-  // console.log($('#skill'));
   p.preventDefault();
   scrollTo({
     top: $('#skill').offset().top,
@@ -336,6 +339,29 @@ $('.top-menu li:nth-child(4)').on('click', (p) => {
     behavior: 'smooth',
   });
 });
+$('.side-menu li:last-child a:first-child').on('click', (p) => {
+  p.preventDefault();
+  scrollTo({
+    top: $('#skill').offset().top,
+    behavior: 'smooth',
+  });
+});
+$('.side-menu li:last-child a:last-child').on('click', (p) => {
+  p.preventDefault();
+  scrollTo({
+    top: aboutTop,
+    behavior: 'smooth',
+  });
+});
+
+/*
+const articles = document.querySelectorAll('article');
+articles.forEach((elem, idx) => {
+  const height = elem.offsetHeight;
+  const top = elem.offsetTop;
+  console.log(`article${idx + 1} - height: ${height}, top: ${top}`);
+});
+*/
 
 // 스크롤에 따른 탑메뉴 없애기 나타내기
 let nowY = 0;

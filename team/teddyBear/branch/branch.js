@@ -13,7 +13,7 @@ $(window).on('scroll', () => {
     });
   }
   if (scrollY > bearMove) {
-    // 곰 투명해지기도형 움직이기
+    // 곰 투명해지기
     $('.bear_wrapper .bear1').css({
       opacity: 0,
       transform: `scale(0)`,

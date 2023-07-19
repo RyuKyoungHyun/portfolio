@@ -69,19 +69,36 @@ figure figcaption {
   color: #2b58ff;
 }
 #project1 figure .img-box {
-  box-shadow: 0px 0px 1.042vw 0.313vw #ff00bb;
+  box-shadow: 0px 0px 1.4px rgba(255, 0, 187, 0.253),
+    0px 0px 3.6px rgba(255, 0, 187, 0.351),
+    0px 0px 7.6px rgba(255, 0, 187, 0.386), 0px 0px 19px rgba(255, 0, 187, 0.41),
+    0px 0px 33px rgba(255, 0, 187, 0.6);
 }
 #project2 figure .img-box {
-  box-shadow: 0px 0px 1.042vw 0.313vw #00ae4b;
+  box-shadow: 0px 0px 1.4px rgba(0, 174, 75, 0.253),
+    0px 0px 3.6px rgba(0, 174, 75, 0.351), 0px 0px 7.6px rgba(0, 174, 75, 0.386),
+    0px 0px 19px rgba(0, 174, 75, 0.41), 0px 0px 33px rgba(0, 174, 75, 0.6);
+  /* box-shadow: 0px 0px 1.042vw 0.313vw rgb(0, 174, 75); */
 }
 #project3 figure .img-box {
-  box-shadow: 0px 0px 1.042vw 0.313vw #ff4000;
+  box-shadow: 0px 0px 1.4px rgba(255, 64, 0, 0.253),
+    0px 0px 3.6px rgba(255, 64, 0, 0.351), 0px 0px 7.6px rgba(255, 64, 0, 0.386),
+    0px 0px 19px rgba(255, 64, 0, 0.41), 0px 0px 33px rgba(255, 64, 0, 0.6);
+  /* box-shadow: 0px 0px 1.042vw 0.313vw rgb(255, 64, 0); */
 }
 #project4 figure .img-box {
-  box-shadow: 0px 0px 1.042vw 0.313vw #ffc400;
+  box-shadow: 0px 0px 1.4px rgba(255, 196, 0, 0.253),
+    0px 0px 3.6px rgba(255, 196, 0, 0.351),
+    0px 0px 7.6px rgba(255, 196, 0, 0.386), 0px 0px 19px rgba(255, 196, 0, 0.41),
+    0px 0px 33px rgba(255, 196, 0, 0.6);
+  /* box-shadow: 0px 0px 1.042vw 0.313vw rgb(255, 196, 0); */
 }
 #project5 figure .img-box {
-  box-shadow: 0px 0px 1.042vw 0.313vw #2b58ff;
+  box-shadow: 0px 0px 1.4px rgba(43, 88, 255, 0.253),
+    0px 0px 3.6px rgba(43, 88, 255, 0.351),
+    0px 0px 7.6px rgba(43, 88, 255, 0.386), 0px 0px 19px rgba(43, 88, 255, 0.41),
+    0px 0px 33px rgba(43, 88, 255, 0.6);
+  /* box-shadow: 0px 0px 1.042vw 0.313vw rgb(43, 88, 255); */
 }
 .block {
   display: block;
@@ -506,8 +523,8 @@ ol li a svg {
 main .side-menu {
   list-style: none;
   position: fixed;
-  left: 4.729vw;
-  bottom: 4.167vw;
+  left: 3.7vw;
+  bottom: 3.2vw;
   font-size: 2vw;
   z-index: 99;
   opacity: 0;
@@ -590,7 +607,7 @@ main .text .page-explain .grid {
   grid-template-columns: 7.813vw 1fr;
 }
 main .text .page-explain .grid:not(:first-child) {
-  margin-top: 6.25vw;
+  margin-top: 15.625vw;
 }
 main .text .page-explain .grid h3 {
   font-size: 1.823vw;
@@ -600,11 +617,8 @@ main .text .page-explain .description {
   font-family: 'Jamsil', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
   color: #202020;
-  font-size: 1.25vw;
+  font-size: 1.1vw;
   border-left: 0.104vw solid #ff79db;
   padding-left: 3.125vw;
   font-weight: 200;
@@ -627,13 +641,14 @@ main .text .page-explain .description .medium {
 main .text .page-explain .description .low::before {
   content: url('./images/desc_low.svg');
   display: inline-block;
-  width: 0.729vw;
+  width: 0.5vw;
   margin-right: 0.521vw;
 }
 main .text .page-explain .description .enter {
   padding-left: 2.604vw;
 }
 main .text .page-explain .description h5 {
+  font-size: 1.25vw;
   padding-left: 2.083vw;
 }
 main .text .page-explain .description p {
@@ -648,6 +663,12 @@ main .text .page-explain .description h4 {
 }
 main .text .page-explain .description h4:not(:first-child) {
   margin-top: 2.084vw;
+}
+main .text .page-explain .problem .description h4:not(:first-child) {
+  margin-top: 6vw;
+}
+main .text .page-explain .problem .description h5:not(:first-of-type) {
+  margin-top: 6vw;
 }
 main .text .page-explain .description .color-box {
   display: flex;
@@ -714,8 +735,21 @@ main .text .page-explain .description .concept span {
   padding-left: 2vw;
 }
 main .text .page-explain .description .accent {
-  color: #ff00bb;
+  display: inline-block;
+  color: #000;
+  padding: 0 1vw;
+  background-color: #ffdef6;
+  font-weight: 500;
+}
+main .text .page-explain .description .pdf {
+  font-size: 1.5vw;
+  margin-top: 4vw;
   font-weight: 700;
+}
+main .text .page-explain .description .pdf:hover {
+  color: #ff00bb;
+  text-decoration: underline;
+  text-underline-offset: 0.521vw;
 }
 main .text .page-explain .description .accent:before {
   display: none;
@@ -726,8 +760,24 @@ main .text .page-explain .publishing .description .indent {
 main .text .page-explain .publishing .description .low::before {
   margin-right: 1.042vw;
 }
-main .text .page-explain .problem .description .block {
+main .text .page-explain .design .description h4 {
+  margin-top: 5vw;
+}
+main .text .page-explain .problem .description h4 + h5:first-of-type {
+  margin-top: 2.5vw;
+}
+main .text .page-explain .problem .description h5 + .low {
+  margin-top: 0.4vw;
+}
+main .text .page-explain .review .description .low:not(:first-child) {
+  margin-top: 5vw;
+}
+main .text .page-explain .description .block {
   padding-left: 1.25vw;
+  margin-top: 1vw;
+}
+main .text .page-explain .publishing .description li:not(:first-child) {
+  margin-top: 1.4vw;
 }
 main .project .site-enter {
   display: grid;
@@ -737,9 +787,9 @@ main .project .site-enter {
   font-size: 1.458vw;
   font-weight: 700;
   position: absolute;
-  bottom: 5.208vw;
+  bottom: 3.8vw;
   /* right: 2.604vw; */
-  right: 56.604vw;
+  right: 46.604vw;
   color: #202020;
   transition: 1.5s;
 }
@@ -759,6 +809,77 @@ main .project .site-enter:hover .button-deco {
 }
 
 /* project 개인 영역 */
+/* 1 */
+main #project1 .site-enter .button-deco {
+  background-image: url('./images/site_button1.png');
+}
+main #project1 .site-enter:hover {
+  color: #ff79db;
+}
+main #project1 .text .page-explain .description {
+  border-color: #ff79db;
+}
+main #project1 .text .page-explain .description .high,
+main #project1 .text .page-explain .description .medium {
+  fill: #ff79db;
+}
+main #project1 .text .page-explain .description .color-box .color:nth-child(1) {
+  background-color: #f0f0f0;
+  color: black;
+}
+main #project1 .text .page-explain .description .color-box .color:nth-child(2) {
+  background-color: #ffad99;
+}
+main #project1 .text .page-explain .description .font-line span:nth-child(1) {
+  font-family: 'Helvetica-95-Black', sans-serif;
+}
+main #project1 .text .page-explain .description .font-line span:nth-child(2) {
+  font-family: 'Gyeonggi', sans-serif;
+}
+main #project1 .text .page-explain .process ol,
+main #project1 .text .page-explain .process ol li {
+  margin: 0;
+}
+main #project1 .text .page-explain .process ol li:not(:first-child) {
+  margin-top: 2vw;
+}
+main #project1 .text .page-explain .process ol li span {
+  padding-left: 0.521vw;
+}
+main #project1 .text .page-explain .design .description .block {
+  padding-left: 0;
+}
+main #project1 .text .page-explain .problem .description .low:nth-of-type(2) {
+  margin-top: 3vw;
+}
+main #project1 .text .page-explain .review .description .low:not(:first-child) {
+  display: block;
+  margin-top: 6vw;
+}
+
+main #project1 .page-explain .problem {
+  position: relative;
+}
+main #project1 .page-explain .problem .sample1-1 {
+  position: absolute;
+  width: 4vw;
+  right: 10vw;
+  top: 0;
+  animation: hide 3s linear infinite;
+}
+@keyframes hide {
+  50% {
+    transform: translateY(0vw);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(6vw) scale(1);
+  }
+  100% {
+    transform: translateY(10vw) scale(0);
+    opacity: 0;
+  }
+}
 /* 2 */
 main #project2 .site-enter .button-deco {
   background-image: url('./images/site_button2.png');
@@ -774,9 +895,10 @@ main #project2 .text .page-explain .description .medium {
   fill: #3dd07c;
 }
 main #project2 .text .page-explain .description .accent {
-  color: #00ae4b;
+  background-color: #b8ffd7;
 }
-/*  3 */
+
+/* 3 */
 main #project3 .site-enter .button-deco {
   background-image: url('./images/site_button3.png');
 }
@@ -791,37 +913,38 @@ main #project3 .text .page-explain .description .medium {
   fill: #ff7445;
 }
 main #project3 .text .page-explain .description .accent {
-  color: #ff4000;
+  background-color: #ffd7ca;
 }
-main #project3 .text .page-explain .description .color-box .color:nth-child(1) {
-  background-color: #141414;
+main #project3 .text .page-explain .description .indent {
+  /* line-height: 1.5; */
+  font-size: 1vw;
+  margin: 0;
+  margin-left: 1vw;
 }
-main #project3 .text .page-explain .description .color-box .color:nth-child(2) {
-  background-color: #1c1c1c;
-  color: white;
+main #project3 .text .page-explain .description h5:nth-of-type(2) {
+  margin-top: 2.5vw;
 }
-main #project3 .text .page-explain .description .color-box .color:nth-child(3) {
-  background-color: #f7f7f7;
-}
-main #project3 .text .page-explain .description .color-box .color:nth-child(4) {
-  background-color: #ff5519;
-}
-main #project3 .text .page-explain .description .color-box .color:nth-child(5) {
-  background-color: #ffb400;
-}
-main #project3 .text .page-explain .description .font-line span:nth-child(1) {
-  font-family: 'Montserrat', sans-serif;
-}
-main #project3 .text .page-explain .description .font-line span:nth-child(2) {
-  font-family: 'Roboto', sans-serif;
-}
-main #project3 .text .page-explain .description .font-line span:nth-child(3) {
-  font-family: 'Noto Sans KR';
-}
-main #project3 .text .page-explain .description .font-line span:nth-child(4) {
-  font-family: 'NanumSquare';
+main
+  #project3
+  .text
+  .page-explain
+  .publishing
+  .description
+  .indent
+  li:not(:first-child) {
+  margin-top: 0.5vw;
 }
 /* 4 */
+main #project4 .text .page-explain .design {
+  position: relative;
+}
+main #project4 .text .page-explain .design img {
+  position: absolute;
+  width: 18vw;
+  aspect-ratio: 1/2;
+  top: 2vw;
+  right: 2vw;
+}
 main #project4 .site-enter .button-deco {
   background-image: url('./images/site_button4.png');
 }
@@ -836,45 +959,47 @@ main #project4 .text .page-explain .description .medium {
   fill: #ffc400;
 }
 main #project4 .text .page-explain .description .accent {
-  color: #ffc400;
+  background-color: #fff2c8;
 }
 main #project4 .text .page-explain .description .color-box .color:nth-child(1) {
-  background-color: #f0f0f0;
+  background-color: #bec9ff;
   color: black;
 }
 main #project4 .text .page-explain .description .color-box .color:nth-child(2) {
-  background-color: #ffad99;
+  background-color: #8d86e2;
 }
-main #project4 .text .page-explain .description .font-line span:nth-child(1) {
-  font-family: 'Helvetica-95-Black', sans-serif;
+main #project4 .text .page-explain .description .color-box .color:nth-child(3) {
+  background-color: #4d6cff;
+  color: white;
 }
-main #project4 .text .page-explain .description .font-line span:nth-child(2) {
-  font-family: 'Gyeonggi', sans-serif;
-}
-main #project4 .text .page-explain .process ol,
-main #project4 .text .page-explain .process ol li {
-  margin: 0;
-}
-main #project4 .text .page-explain .process ol li span {
-  padding-left: 0.521vw;
+main #project4 .text .page-explain .description .color-box .color:nth-child(4) {
+  background-color: #484848;
+  color: white;
 }
 main #project4 .text .page-explain .description .block {
   padding-left: 1.25vw;
 }
-main #project4 .text .page-explain .design .description .block {
-  padding-left: 0;
+
+main #project4 .text .page-explain .process ol,
+main #project4 .text .page-explain .process ol li {
+  margin: 0;
 }
-main #project4 .text .page-explain .problem .description .accent {
-  display: inline-block;
-  font-size: 1.5vw;
-  color: #000;
+main #project4 .text .page-explain .process ol li:not(:first-child) {
+  margin-top: 2vw;
 }
-main #project4 .text .page-explain .problem .description .accent:hover {
-  color: #f99d18;
+main #project4 .text .page-explain .process ol li span {
+  padding-left: 0.521vw;
+}
+main #project4 .text .page-explain .description .pdf:hover {
+  color: #ffc400;
   text-decoration: underline;
   text-underline-offset: 0.521vw;
 }
-/* 5 */
+main #project4 .text .page-explain .review .description .low:not(:first-child) {
+  display: block;
+  margin-top: 6vw;
+}
+/*  5 */
 main #project5 .site-enter .button-deco {
   background-image: url('./images/site_button5.png');
 }
@@ -889,45 +1014,35 @@ main #project5 .text .page-explain .description .medium {
   fill: #718fff;
 }
 main #project5 .text .page-explain .description .accent {
-  color: #2b58ff;
+  background-color: #d5deff;
 }
 main #project5 .text .page-explain .description .color-box .color:nth-child(1) {
-  background-color: #bec9ff;
-  color: black;
+  background-color: #141414;
 }
 main #project5 .text .page-explain .description .color-box .color:nth-child(2) {
-  background-color: #8d86e2;
+  background-color: #1c1c1c;
+  color: white;
 }
 main #project5 .text .page-explain .description .color-box .color:nth-child(3) {
-  background-color: #4d6cff;
-  color: white;
+  background-color: #f7f7f7;
 }
 main #project5 .text .page-explain .description .color-box .color:nth-child(4) {
-  background-color: #484848;
-  color: white;
+  background-color: #ff5519;
 }
-main #project5 .text .page-explain .description .block {
-  padding-left: 1.25vw;
+main #project5 .text .page-explain .description .color-box .color:nth-child(5) {
+  background-color: #ffb400;
 }
-main .text .page-explain .description .low {
+main #project5 .text .page-explain .description .font-line span:nth-child(1) {
+  font-family: 'Montserrat', sans-serif;
 }
-
-main #project5 .text .page-explain .process ol,
-main #project5 .text .page-explain .process ol li {
-  margin: 0;
+main #project5 .text .page-explain .description .font-line span:nth-child(2) {
+  font-family: 'Roboto', sans-serif;
 }
-main #project5 .text .page-explain .process ol li span {
-  padding-left: 0.521vw;
+main #project5 .text .page-explain .description .font-line span:nth-child(3) {
+  font-family: 'Noto Sans KR';
 }
-main #project5 .text .page-explain .result .description .accent {
-  display: inline-block;
-  font-size: 1.5vw;
-  color: #000;
-}
-main #project5 .text .page-explain .result .description .accent:hover {
-  color: #718fff;
-  text-decoration: underline;
-  text-underline-offset: 0.521vw;
+main #project5 .text .page-explain .description .font-line span:nth-child(4) {
+  font-family: 'NanumSquare';
 }
 
 main .title {
