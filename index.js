@@ -153,10 +153,10 @@ h1s.forEach((h1, idx) => {
 });
 
 // 커서 이미지 바꾸기
-const clientWt = document.querySelector('#project1 .img-box').offsetWidth;
 const pro = document.querySelectorAll('.project');
 // 헤더 버튼 이동
 pro.forEach((ject, proIdx) => {
+  let clientWt = document.querySelector('#project1 .img-box').offsetWidth;
   $(`.main-menu ol li:nth-child(${proIdx + 1}) a`).on('click', (p) => {
     p.preventDefault();
     scrollTo({
@@ -172,50 +172,75 @@ pro.forEach((ject, proIdx) => {
       behavior: 'smooth',
     });
   });
-  const proImg = ject.querySelectorAll('img');
-  $(ject)
-    .find('img')
-    .on('mousemove', (a) => {
-      // console.log(a);
-      if (clientWt / 2 < a.offsetX) {
-        $(a.target).css({
-          cursor: `url("./images/nextCursor${proIdx + 1}.png") 20 25 , auto`,
-        });
-      } else {
-        $(a.target).css({
-          cursor: `url("./images/prevCursor${proIdx + 1}.png") 20 25 , auto`,
-        });
-      }
-    });
-
+  const proImg = ject.querySelectorAll('figure img');
   // 이미지 슬라이드
   // 페이지 넘버
   proImg.forEach((a, idx) => {
+    //커서
+    const cursorEvent = (a) => {
+      clientWt = document.querySelector('#project1 .img-box').offsetWidth;
+      if (clientWt / 2 < a.offsetX) {
+        if (idx == proImg.length - 1) {
+          $(a.target).css({
+            cursor: `url("./images/nextCursor${
+              proIdx + 1
+            }op.png") 20 25 , auto`,
+          });
+        } else {
+          $(a.target).css({
+            cursor: `url("./images/nextCursor${proIdx + 1}.png") 20 25 , auto`,
+          });
+        }
+      } else {
+        if (idx == 0) {
+          $(a.target).css({
+            cursor: `url("./images/prevCursor${
+              proIdx + 1
+            }op.png") 20 25 , auto`,
+          });
+        } else {
+          $(a.target).css({
+            cursor: `url("./images/prevCursor${proIdx + 1}.png") 20 25 , auto`,
+          });
+        }
+      }
+    };
+    $(a).on('mousemove', (a) => {
+      cursorEvent(a);
+    });
+    $(a).on('mouseover', (a) => {
+      cursorEvent(a);
+    });
     $(a).parent().siblings('figcaption').find('.total').text(proImg.length);
     const nowText = $(a).parent().siblings('figcaption').find('.now');
 
     $(a).on('click', (a) => {
+      const vW = document.documentElement.clientWidth;
       if (clientWt / 2 < a.offsetX) {
         if (idx < proImg.length - 1) {
           $(a.target).css({
-            transform: `translateX(${-clientWt * (idx + 1)}px)`,
+            transform: `translateX(${((-clientWt * (idx + 1)) / vW) * 100}vw)`,
           });
           $(a.target)
             .siblings()
             .css({
-              transform: `translateX(${-clientWt * (idx + 1)}px)`,
+              transform: `translateX(${
+                ((-clientWt * (idx + 1)) / vW) * 100
+              }vw)`,
             });
           nowText.text(`${idx + 2}`);
         }
       } else {
         if (idx > 0) {
           $(a.target).css({
-            transform: `translateX(${-clientWt * (idx - 1)}px)`,
+            transform: `translateX(${((-clientWt * (idx - 1)) / vW) * 100}vw)`,
           });
           $(a.target)
             .siblings()
             .css({
-              transform: `translateX(${-clientWt * (idx - 1)}px)`,
+              transform: `translateX(${
+                ((-clientWt * (idx - 1)) / vW) * 100
+              }vw)`,
             });
           nowText.text(`${idx}`);
         }
