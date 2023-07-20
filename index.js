@@ -211,6 +211,11 @@ pro.forEach((ject, proIdx) => {
     $(a).on('mouseover', (a) => {
       cursorEvent(a);
     });
+    $(a).on('mouseout', (a) => {
+      $(a.target).css({
+        cursor: `auto`,
+      });
+    });
     $(a).parent().siblings('figcaption').find('.total').text(proImg.length);
     const nowText = $(a).parent().siblings('figcaption').find('.now');
 
