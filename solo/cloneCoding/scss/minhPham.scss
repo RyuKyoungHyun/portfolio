@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+/* 변수 선언 */
+$mainFont: 'AvanG', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+$colorBasic: rgb(183, 171, 152);
+$colorOrangered: rgb(235, 89, 57);
+
+$fontSize155: 8.073vw;
+$fontSize88: 4.583vw;
+$fontSize44: 2.292vw;
+$fontSize17: 0.885vw;
+$fontSize15: 0.781vw;
+
+$space323: 16.823vw;
+$space278: 14.479vw;
+$space182: 9.479vw;
+$space152: 7.917vw;
+$space88: 4.583vw;
+$space52: 2.708vw;
+$space33: 1.719vw;
+$space17: 0.885vw;
+$space11: 0.573vw;
+$space6: 0.313vw;
+
+body {
+  font-family: $mainFont;
+  font-size: $fontSize15;
+  line-height: 0.85;
+  .container {
+    // 기본적인 스타일변경, 클래스명으로 값 조정
+    .block {
+      display: block;
+    }
+    // ------ header
+    header {
+    }
+
+    // ------ main
+    main {
+      // --- part1
+      .firstScreen {
+        text-transform: uppercase;
+        background: url('../video/hero.mp4') no-repeat 50% / cover;
+        h2 {
+          text-align: center;
+          font-size: $fontSize155;
+          .block:is(:nth-child(1), :nth-child(2)) {
+            color: $colorOrangered;
+          }
+        }
+      }
+    }
+
+    // ------ footer
+    footer {
+    }
+  }
+}
