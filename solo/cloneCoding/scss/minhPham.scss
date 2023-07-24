@@ -3,9 +3,14 @@
 /* 변수 선언 */
 $mainFont: 'AvanG', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
   Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$subFont: 'proximaNova', system-ui, -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+  sans-serif;
 
 $colorBasic: rgb(183, 171, 152);
+$colorBorder: rgba(183, 171, 152, 0.247);
 $colorOrangered: rgb(235, 89, 57);
+$colorBackBlack: #0d0d0d;
 
 $fontSize155: 8.073vw;
 $fontSize88: 4.583vw;
@@ -26,28 +31,353 @@ $space6: 0.313vw;
 
 body {
   font-family: $mainFont;
-  font-size: $fontSize15;
-  line-height: 0.85;
+  font-size: $fontSize88;
+  color: $colorBasic;
+  background-color: $colorBackBlack;
+  line-height: 1;
+  letter-spacing: -0.15vw;
   .container {
     // 기본적인 스타일변경, 클래스명으로 값 조정
     .block {
       display: block;
     }
+    .redorange {
+      color: $colorOrangered;
+    }
+    @mixin marginLeft {
+      margin-left: $space323;
+    }
+    @mixin headLine {
+      display: block;
+      font-size: $fontSize15;
+      margin-bottom: $space33;
+      text-transform: uppercase;
+      letter-spacing: 0.5vw;
+    }
+
+    @mixin bigLine {
+      font-size: $fontSize;
+    }
     // ------ header
     header {
+      width: 100%;
+      position: fixed;
+      z-index: 3;
+      font-size: $fontSize17;
+      font-family: $subFont;
+      font-weight: bold;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      padding: $space52 $space88;
+      padding-bottom: 0;
+
+      .logo {
+        width: 3vw;
+        aspect-ratio: 1/1;
+        text-indent: -999px;
+        background: url('../favicon/android-chrome-192x192.png') no-repeat 50% /
+          contain;
+      }
+      .menu {
+        text-align: right;
+        li {
+          margin-bottom: $space11;
+          letter-spacing: 0;
+          overflow: hidden;
+          a {
+            position: relative;
+            &:hover {
+              .block {
+                transition: 0.5s;
+                transform: translateY(-100%);
+              }
+            }
+            .opacity {
+              opacity: 0.5;
+            }
+            .hidden {
+              position: absolute;
+              top: 100%;
+              right: 0;
+            }
+          }
+        }
+      }
     }
 
     // ------ main
     main {
       // --- part1
+      article {
+        position: relative;
+        z-index: 1;
+      }
+
+      @mixin lineEvent {
+        .textLine {
+          margin-left: $space323;
+          position: relative;
+          white-space: nowrap;
+          .fill {
+            overflow: hidden;
+            width: 0%;
+            max-width: 101%;
+            position: absolute;
+            padding-bottom: $space11;
+            top: 0;
+          }
+          .opacity {
+            opacity: 0.5;
+          }
+        }
+      }
       .firstScreen {
         text-transform: uppercase;
-        background: url('../video/hero.mp4') no-repeat 50% / cover;
+        position: relative;
+        line-height: 0.85;
+        overflow: hidden;
+        video {
+          width: 100%;
+          position: fixed;
+          top: -1vw;
+          z-index: 0;
+        }
         h2 {
+          padding: $space152 0 $space182;
           text-align: center;
           font-size: $fontSize155;
+          position: relative;
+          z-index: 1;
+          &:before {
+            content: 'minh pham';
+            @include headLine;
+            font-size: $fontSize17;
+          }
           .block:is(:nth-child(1), :nth-child(2)) {
             color: $colorOrangered;
+          }
+        }
+      }
+
+      .aboutMe {
+        background-color: $colorBackBlack;
+        display: flex;
+        // flex-shrink: 0;
+        .content-box {
+          padding: $space278 0;
+          @include marginLeft;
+          &:before {
+            content: 'about me';
+            @include headLine;
+          }
+          .textLine {
+            position: relative;
+            white-space: nowrap;
+            .fill {
+              overflow: hidden;
+              width: 0%;
+              max-width: 101%;
+              position: absolute;
+              padding-bottom: $space11;
+              top: 0;
+              transition: 0.3s;
+            }
+            .opacity {
+              opacity: 0.5;
+            }
+          }
+        }
+      }
+      .whatIDo {
+        font-size: $fontSize155;
+        line-height: 0.85;
+        &:before {
+          content: 'what i do';
+          @include headLine;
+          @include marginLeft;
+        }
+        ul {
+          text-transform: uppercase;
+          padding-bottom: $space278;
+          li {
+            border-top: solid 1px $colorBorder;
+            @include lineEvent;
+            &:last-child {
+              border-bottom: solid 1px $colorBorder;
+            }
+          }
+        }
+      }
+      .experience {
+        background: url('../images/work-2400.jpg') no-repeat fixed 50% / cover;
+        padding: $space278 0;
+        &:before {
+          content: 'experience';
+          @include headLine;
+          @include marginLeft;
+        }
+        .content-box {
+          @include lineEvent;
+        }
+      }
+      .history {
+        position: relative;
+        &:before {
+          position: absolute;
+          bottom: 100%;
+          content: 'history';
+          @include headLine;
+          @include marginLeft;
+        }
+        ul {
+          font-size: $fontSize44;
+          text-align: left;
+          li {
+            display: flex;
+            border-bottom: 1px solid $colorBorder;
+            h3 {
+              @include marginLeft;
+              padding: $space52 0;
+              text-transform: uppercase;
+              width: 15.5vw;
+            }
+            .history-text {
+              text-transform: capitalize;
+              padding: $space52;
+              letter-spacing: -0.12vw;
+              &:after {
+                content: 'fantasy interactive';
+                font-family: $subFont;
+                letter-spacing: 0;
+                margin-top: $space17;
+                display: block;
+                font-size: $fontSize17;
+              }
+            }
+          }
+        }
+      }
+      .clients {
+        padding: $space278 0;
+        &:before {
+          content: 'clients';
+          @include headLine;
+          @include marginLeft;
+        }
+        @include lineEvent;
+      }
+      .planetList {
+        ul {
+          text-transform: uppercase;
+          font-size: $fontSize155;
+          line-height: 0.85;
+          li {
+            border-top: 1px solid $colorBorder;
+            @include lineEvent;
+            &:last-child {
+              padding-top: 2vw;
+              display: flex;
+              gap: 0.8vw;
+              span {
+                &:first-child {
+                  @include marginLeft;
+                }
+                width: 0.7vw;
+                border-radius: 50%;
+                aspect-ratio: 1/1;
+                background-color: $colorBasic;
+              }
+            }
+          }
+        }
+      }
+      .raisingVideo {
+        padding: $space278 0;
+        .video-wrapper {
+          overflow: hidden;
+        }
+      }
+      .whatThey {
+        .content-box {
+          position: relative;
+          @include marginLeft;
+          margin-right: $space323;
+          &:before {
+            content: 'what they said';
+            @include headLine;
+            padding-bottom: $space33;
+          }
+          & > li {
+            border-top: 1px solid $colorBorder;
+            @include lineEvent;
+            padding: $space152 0;
+            .textLine {
+              margin: 0;
+            }
+            &:first-child {
+              .personList {
+                position: absolute;
+                right: 0;
+                top: 13vw;
+                display: flex;
+                flex-flow: column;
+                gap: $space33;
+                li {
+                  width: 5.469vw;
+                  svg {
+                    width: 0.9vw;
+                    position: absolute;
+                    top: 2.2345vw;
+                    left: -1.8vw;
+                    transform: rotate(-135deg);
+                  }
+                }
+              }
+            }
+          }
+          p {
+            font-size: $fontSize17;
+            letter-spacing: 0;
+            text-transform: capitalize;
+            opacity: 0.5;
+            margin-top: $space11;
+            &:first-of-type {
+              margin-top: $space52;
+              opacity: 1;
+            }
+            &:nth-of-type(2) {
+              margin-top: $space33;
+            }
+          }
+        }
+      }
+      .myMotto {
+        text-align: center;
+        background: url('../images/banner-bottom-2400.jpg') no-repeat fixed 50% /
+          cover;
+        h2 {
+          line-height: 0.85;
+          font-size: $fontSize155;
+          padding: $space278 0;
+          margin: 0 auto;
+          text-transform: uppercase;
+          &:before {
+            content: 'my motto';
+            font-size: $fontSize17;
+            display: block;
+            letter-spacing: 0.5vw;
+            margin-bottom: $space33;
+          }
+          &:after {
+            font-family: $subFont;
+            font-weight: bold;
+            content: 'dieter rams';
+            text-transform: capitalize;
+            font-size: $fontSize17;
+            display: block;
+            letter-spacing: 0;
+            margin-top: $space33;
           }
         }
       }
@@ -55,6 +385,112 @@ body {
 
     // ------ footer
     footer {
+      font-size: $fontSize44;
+      padding: $space182 0;
+      > p {
+        font-size: $fontSize17;
+        letter-spacing: 0.5vw;
+        text-transform: uppercase;
+        @include marginLeft;
+        margin-bottom: $space52;
+      }
+      .content-box {
+        @include marginLeft;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        ul {
+          text-transform: capitalize;
+          display: grid;
+          grid-template: repeat(3, 1fr) / 1fr 1fr;
+          li {
+            display: flex;
+            align-items: center;
+            &:before {
+              content: url('../images/ic-contact-link.svg');
+              margin-bottom: 1vw;
+              margin-right: $space17;
+            }
+            a {
+              display: flex;
+              align-items: center;
+              height: 100%;
+              flex-grow: 1;
+            }
+          }
+        }
+        .email-tel {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          align-items: center;
+          letter-spacing: 0;
+          font-size: $fontSize17;
+          > div {
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+          }
+          h4 {
+            margin-bottom: $space11;
+          }
+          p {
+            opacity: 0.5;
+          }
+        }
+      }
+      .fixed-footer {
+        ul {
+          position: fixed;
+          z-index: 3;
+          bottom: $space52;
+          left: $space88;
+          // text-indent: -9999px;
+          font-size: 1.354vw;
+          li {
+            width: 1.8vw;
+          }
+          svg {
+            fill: $colorBasic;
+            width: 1.354vw;
+            margin-bottom: $space33;
+          }
+          span {
+            border: 0;
+            clip: rect(0 0 0 0);
+            clip-path: inset(50%);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+          }
+        }
+        .sound {
+          text-transform: uppercase;
+          position: fixed;
+          z-index: 3;
+          bottom: 6.708vw;
+          right: 2.583vw;
+          font-size: $fontSize17;
+          letter-spacing: 0;
+          font-family: $subFont;
+          transform: rotate(-90deg);
+          font-weight: bold;
+          cursor: pointer;
+          &:hover {
+            .opacity {
+              opacity: 1;
+            }
+          }
+          .opacity {
+            opacity: 0.5;
+            transition: 0.5s;
+            padding-right: $space11;
+          }
+        }
+      }
     }
   }
 }
