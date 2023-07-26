@@ -29,6 +29,9 @@ $space17: 0.885vw;
 $space11: 0.573vw;
 $space6: 0.313vw;
 
+// html {
+//   scroll-behavior: smooth;
+// }
 body {
   font-family: $mainFont;
   font-size: $fontSize88;
@@ -37,6 +40,7 @@ body {
   line-height: 1;
   letter-spacing: -0.15vw;
   .container {
+    overflow: hidden;
     // 기본적인 스타일변경, 클래스명으로 값 조정
     .block {
       display: block;
@@ -122,13 +126,14 @@ body {
           .fill {
             overflow: hidden;
             width: 0%;
-            max-width: 101%;
+            max-width: 100%;
             position: absolute;
             padding-bottom: $space11;
             top: 0;
+            // transition: 1s;
           }
           .opacity {
-            opacity: 0.5;
+            opacity: 0.2;
           }
         }
       }
@@ -184,7 +189,7 @@ body {
               transition: 0.3s;
             }
             .opacity {
-              opacity: 0.5;
+              opacity: 0.2;
             }
           }
         }
@@ -203,6 +208,9 @@ body {
           li {
             border-top: solid 1px $colorBorder;
             @include lineEvent;
+            .textLine {
+              display: inline-block;
+            }
             &:last-child {
               border-bottom: solid 1px $colorBorder;
             }
@@ -210,7 +218,8 @@ body {
         }
       }
       .experience {
-        background: url('../images/work-2400.jpg') no-repeat fixed 50% / cover;
+        background: url('../images/work-2400.jpg') no-repeat 50% / cover;
+        // background-position-y: 50%;
         padding: $space278 0;
         &:before {
           content: 'experience';
@@ -272,9 +281,13 @@ body {
           text-transform: uppercase;
           font-size: $fontSize155;
           line-height: 0.85;
+          padding-bottom: $space182;
           li {
             border-top: 1px solid $colorBorder;
             @include lineEvent;
+            .textLine {
+              display: inline-block;
+            }
             &:last-child {
               padding-top: 2vw;
               display: flex;
@@ -293,12 +306,36 @@ body {
         }
       }
       .raisingVideo {
-        padding: $space278 0;
-        .video-wrapper {
-          overflow: hidden;
+        padding-bottom: $space278;
+        overflow: hidden;
+        // width: 100vh;
+        .video-box {
+          display: grid;
+          justify-content: center;
+          align-items: end;
+          height: 100vh;
+          max-height: 100vh;
+          .video-wrapper {
+            overflow: hidden;
+            height: 60vh;
+            // width: 100%;
+            aspect-ratio: 1920 / 980;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            video {
+              width: auto;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              object-fit: cover;
+            }
+          }
         }
       }
       .whatThey {
+        // padding-top: $space278;
         .content-box {
           position: relative;
           @include marginLeft;
@@ -325,11 +362,20 @@ body {
                 gap: $space33;
                 li {
                   width: 5.469vw;
+                  img {
+                    transition: 0.5s;
+                    opacity: 0.5;
+                    &.look {
+                      filter: brightness(1.2);
+                      opacity: 1;
+                    }
+                  }
                   svg {
                     width: 0.9vw;
                     position: absolute;
                     top: 2.2345vw;
                     left: -1.8vw;
+                    transition: 0.5s;
                     transform: rotate(-135deg);
                   }
                 }
@@ -354,7 +400,7 @@ body {
       }
       .myMotto {
         text-align: center;
-        background: url('../images/banner-bottom-2400.jpg') no-repeat fixed 50% /
+        background: url('../images/banner-bottom-2400.jpg') no-repeat 50% /
           cover;
         h2 {
           line-height: 0.85;
