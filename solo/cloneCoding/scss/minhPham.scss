@@ -208,6 +208,28 @@ body {
           li {
             border-top: solid 1px $colorBorder;
             @include lineEvent;
+            // position: relative;
+            .hover-look {
+              overflow: hidden;
+              // height: 0px;
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+              padding-left: $space323;
+              background-color: $colorOrangered;
+              color: $colorBackBlack;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              transition: 0.5s;
+              p {
+                font-size: $fontSize15;
+                letter-spacing: 0;
+                text-transform: none;
+                margin-right: $space323;
+              }
+            }
             .textLine {
               display: inline-block;
             }

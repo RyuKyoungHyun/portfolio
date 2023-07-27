@@ -116,6 +116,9 @@ body {
     }
     .whatThey {
       .content-box {
+        .text-wrapper {
+          display: inline-block;
+        }
         p {
           opacity: 1;
         }
@@ -123,6 +126,9 @@ body {
     }
     .myMotto {
       background: none;
+      h2 {
+        display: inline-block;
+      }
     }
   }
 }

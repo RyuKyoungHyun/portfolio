@@ -128,7 +128,7 @@ addEventListener('scroll', () => {
   ).clientHeight;
   const personSVG = document.querySelector('.whatThey .personList svg');
   const personGap = (personList.clientHeight - personLi.clientHeight * 3) / 2;
-  console.log(personGap);
+  // console.log(personGap);
   // console.log(personSVG);
   if (theyTop > scrollY) {
     personList.style.transform = `translateY(0px)`;
@@ -194,7 +194,7 @@ document.addEventListener('mousemove', (e) => {
   maskContainer.style.webkitMaskPosition = `calc(${cursorX}px - ${
     cursorSize / 2
   }vw) calc(${cursorY + scrollY}px - ${cursorSize / 2}vw)`;
-  console.log(maskContainer.style.webkitMaskSize);
+  // console.log(maskContainer.style.webkitMaskSize);
 });
 function bigger(a) {
   a.addEventListener('mouseover', () => {
@@ -216,8 +216,45 @@ const experContent = document.querySelector(
 const clientContent = document.querySelector(
   '.container.orange .clients .text-box'
 );
+const theycontent = document.querySelectorAll(
+  '.container.orange .whatThey .text-wrapper'
+);
+const mottocontent = document.querySelector('.container.orange .myMotto h2');
 bigger(firstH2);
 bigger(aboutContent);
 bigger(clientContent);
+theycontent.forEach((a) => {
+  bigger(a);
+});
+bigger(mottocontent);
 
+//hover 영역조정
+const hoverLook = document.querySelectorAll(
+  '.container.dark .whatIDo .hover-look'
+);
+const whatTextTop = document.querySelectorAll(
+  '.container.dark .whatIDo .textLine'
+);
+whatTextTop.forEach((a) => {
+  a.nextElementSibling.style.top = `${a.offsetTop}px`;
+});
+const whatorangeText = document.querySelectorAll(
+  '.container.orange .whatIDo .textLine'
+);
+
+whatorangeText.forEach((a, idx) => {
+  a.addEventListener('mouseover', () => {
+    hoverLook[idx].style.height = '55px';
+  });
+  a.addEventListener('mouseout', () => {
+    hoverLook[idx].style.height = '0px';
+  });
+});
+
+// idocontent.forEach((a, idx) => {
+//   const aHt = a.clientHeight;
+//   console.log(aHt);
+//   a.style.top = `${aHt * idx + whatTextTop}px`;
+//   console.log(a.style.Top);
+// });
 // 확대
