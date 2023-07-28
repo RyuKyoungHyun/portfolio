@@ -62,6 +62,11 @@ body {
     @mixin bigLine {
       font-size: $fontSize;
     }
+    header {
+      .logo {
+        fill: $colorBackBlack;
+      }
+    }
     main {
       .redorange {
         color: inherit;
@@ -89,10 +94,37 @@ body {
       .experience {
         background: none;
         .content-box {
+          &:before {
+            margin-left: 0;
+          }
           display: inline-block;
           @include marginLeft;
           .textLine {
             margin: 0;
+          }
+        }
+      }
+      .history {
+        li {
+          display: flex;
+          h3 {
+            @include marginLeft;
+            padding: $space52 0;
+            text-transform: uppercase;
+            width: 15.5vw;
+          }
+          .history-text {
+            text-transform: capitalize;
+            padding: $space52;
+            letter-spacing: -0.12vw;
+            &:after {
+              content: 'fantasy interactive';
+              font-family: $subFont;
+              letter-spacing: 0;
+              margin-top: $space17;
+              display: block;
+              font-size: $fontSize17;
+            }
           }
         }
       }

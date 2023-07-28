@@ -28,7 +28,9 @@ $space33: 1.719vw;
 $space17: 0.885vw;
 $space11: 0.573vw;
 $space6: 0.313vw;
-
+html {
+  scroll-behavior: unset;
+}
 // html {
 //   scroll-behavior: smooth;
 // }
@@ -73,17 +75,27 @@ body {
       text-transform: uppercase;
       display: flex;
       justify-content: space-between;
-      padding: $space52 $space88;
-      padding-bottom: 0;
 
       .logo {
+        position: absolute;
+        top: $space88;
+        left: $space88;
         width: 3vw;
+        fill: #b7ab98;
         aspect-ratio: 1/1;
-        text-indent: -999px;
-        background: url('../favicon/android-chrome-192x192.png') no-repeat 50% /
-          contain;
+        transition: 0.5s;
+        cursor: pointer;
+        span {
+          display: block;
+          overflow: hidden;
+          height: 0px;
+          transition: 0.5s;
+        }
       }
       .menu {
+        position: absolute;
+        top: $space88;
+        right: $space88;
         text-align: right;
         li {
           margin-bottom: $space11;
@@ -211,7 +223,7 @@ body {
             // position: relative;
             .hover-look {
               overflow: hidden;
-              // height: 0px;
+              height: 0px;
               position: absolute;
               width: 100%;
               top: 0;
@@ -227,7 +239,7 @@ body {
                 font-size: $fontSize15;
                 letter-spacing: 0;
                 text-transform: none;
-                margin-right: $space323;
+                margin-right: $space278;
               }
             }
             .textLine {
@@ -243,12 +255,12 @@ body {
         background: url('../images/work-2400.jpg') no-repeat 50% / cover;
         // background-position-y: 50%;
         padding: $space278 0;
-        &:before {
-          content: 'experience';
-          @include headLine;
-          @include marginLeft;
-        }
         .content-box {
+          &:before {
+            content: 'experience';
+            @include headLine;
+            @include marginLeft;
+          }
           @include lineEvent;
         }
       }
@@ -265,25 +277,63 @@ body {
           font-size: $fontSize44;
           text-align: left;
           li {
-            display: flex;
             border-bottom: 1px solid $colorBorder;
-            h3 {
-              @include marginLeft;
-              padding: $space52 0;
-              text-transform: uppercase;
-              width: 15.5vw;
+            position: relative;
+            .textLine {
+              display: flex;
+              // align-items: center;
+              h3 {
+                @include marginLeft;
+                padding: $space52 0;
+                text-transform: uppercase;
+                width: 15.5vw;
+              }
+              .history-text {
+                text-transform: capitalize;
+                padding: $space52;
+                letter-spacing: -0.12vw;
+                &:after {
+                  content: 'fantasy interactive';
+                  font-family: $subFont;
+                  letter-spacing: 0;
+                  margin-top: $space17;
+                  display: block;
+                  font-size: $fontSize17;
+                }
+              }
             }
-            .history-text {
-              text-transform: capitalize;
-              padding: $space52;
-              letter-spacing: -0.12vw;
-              &:after {
-                content: 'fantasy interactive';
-                font-family: $subFont;
-                letter-spacing: 0;
-                margin-top: $space17;
-                display: block;
-                font-size: $fontSize17;
+            .hover-look {
+              overflow: hidden;
+              height: 0px;
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+              padding-left: $space323;
+              background-color: $colorOrangered;
+              color: $colorBackBlack;
+              display: flex;
+              align-items: center;
+              transition: 0.5s;
+              h3 {
+                // @include marginLeft;
+                padding: $space52 0;
+                text-transform: uppercase;
+                width: 15.5vw;
+                // align-self: start;
+              }
+              .history-text {
+                text-transform: capitalize;
+                padding: $space52;
+                letter-spacing: -0.12vw;
+                &:after {
+                  content: 'fantasy interactive';
+                  font-family: $subFont;
+                  letter-spacing: 0;
+                  margin-top: $space17;
+                  display: block;
+                  font-size: $fontSize17;
+                }
               }
             }
           }
@@ -309,6 +359,35 @@ body {
             @include lineEvent;
             .textLine {
               display: inline-block;
+            }
+            &:nth-child(4) .hover-look {
+              white-space: nowrap;
+              overflow: hidden;
+              .block {
+                overflow: hidden;
+                width: 60%;
+              }
+            }
+            .hover-look {
+              overflow: hidden;
+              height: 0px;
+              position: absolute;
+              width: 100%;
+              top: 0;
+              left: 0;
+              padding-left: $space323;
+              background-color: $colorOrangered;
+              color: $colorBackBlack;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              transition: 0.5s;
+              p {
+                font-size: $fontSize15;
+                letter-spacing: 0;
+                text-transform: none;
+                margin-right: $space278;
+              }
             }
             &:last-child {
               padding-top: 2vw;

@@ -1,8 +1,5 @@
 addEventListener('scroll', () => {
-  scrollTo({
-    top: scrollY,
-    behavior: 'smooth',
-  });
+  console.log(scrollY);
   const firstVideoPoint = document.querySelector('.firstScreen video');
   const vH = document.documentElement.clientHeight;
   // firstScreen 비디오 움직이기
@@ -222,6 +219,7 @@ const theycontent = document.querySelectorAll(
 const mottocontent = document.querySelector('.container.orange .myMotto h2');
 bigger(firstH2);
 bigger(aboutContent);
+bigger(experContent);
 bigger(clientContent);
 theycontent.forEach((a) => {
   bigger(a);
@@ -229,32 +227,133 @@ theycontent.forEach((a) => {
 bigger(mottocontent);
 
 //hover 영역조정
-const hoverLook = document.querySelectorAll(
+const whatHoverLook = document.querySelectorAll(
   '.container.dark .whatIDo .hover-look'
 );
-const whatTextTop = document.querySelectorAll(
+const whatText = document.querySelectorAll(
   '.container.dark .whatIDo .textLine'
 );
-whatTextTop.forEach((a) => {
-  a.nextElementSibling.style.top = `${a.offsetTop}px`;
-});
 const whatorangeText = document.querySelectorAll(
   '.container.orange .whatIDo .textLine'
 );
 
-whatorangeText.forEach((a, idx) => {
-  a.addEventListener('mouseover', () => {
-    hoverLook[idx].style.height = '55px';
+//whatIDo 호버효과
+whatText.forEach((a) => {
+  const aHt = a.clientHeight;
+  a.nextElementSibling.style.top = `${a.offsetTop + aHt / 2}px`;
+});
+whatorangeText.forEach((w, idx) => {
+  w.addEventListener('mouseover', () => {
+    whatHoverLook[idx].style.top = `${whatText[idx].offsetTop}px`;
+    whatHoverLook[idx].style.height = `${whatText[idx].clientHeight}px`;
+
+    maskContainer.style.webkitMaskSize = `0vw`;
+    cursorSize = 0;
   });
-  a.addEventListener('mouseout', () => {
-    hoverLook[idx].style.height = '0px';
+  w.addEventListener('mouseout', () => {
+    whatHoverLook[idx].style.top = `${
+      whatText[idx].offsetTop + whatText[idx].clientHeight / 2
+    }px`;
+    whatHoverLook[idx].style.height = `0px`;
+
+    maskContainer.style.webkitMaskSize = `2.4vw`;
+    cursorSize = 2.4;
   });
 });
 
-// idocontent.forEach((a, idx) => {
-//   const aHt = a.clientHeight;
-//   console.log(aHt);
-//   a.style.top = `${aHt * idx + whatTextTop}px`;
-//   console.log(a.style.Top);
-// });
-// 확대
+//planet
+const planetHoverLook = document.querySelectorAll(
+  '.container.dark .planetList .hover-look'
+);
+const planetText = document.querySelectorAll(
+  '.container.dark .planetList .textLine'
+);
+const planetOrangeText = document.querySelectorAll(
+  '.container.orange .planetList .textLine'
+);
+
+planetText.forEach((a) => {
+  const aHt = a.clientHeight;
+  a.nextElementSibling.style.top = `${a.offsetTop + aHt / 2}px`;
+});
+planetOrangeText.forEach((w, idx) => {
+  w.addEventListener('mouseover', () => {
+    planetHoverLook[idx].style.top = `${planetText[idx].offsetTop}px`;
+    planetHoverLook[idx].style.height = `${planetText[idx].clientHeight}px`;
+
+    maskContainer.style.webkitMaskSize = `0vw`;
+    cursorSize = 0;
+  });
+  w.addEventListener('mouseout', () => {
+    planetHoverLook[idx].style.top = `${
+      planetText[idx].offsetTop + planetText[idx].clientHeight / 2
+    }px`;
+    planetHoverLook[idx].style.height = `0px`;
+
+    maskContainer.style.webkitMaskSize = `2.4vw`;
+    cursorSize = 2.4;
+  });
+});
+
+//history
+const historyHoverLook = document.querySelectorAll(
+  '.container.dark .history .hover-look'
+);
+const historyText = document.querySelectorAll(
+  '.container.dark .history .textLine'
+);
+const historyOrangeText = document.querySelectorAll(
+  '.container.orange .history-text'
+);
+const historyH3 = document.querySelectorAll(
+  '.container.dark .history .hover-look h3'
+);
+
+historyText.forEach((a) => {
+  const aHt = a.clientHeight;
+  a.nextElementSibling.style.top = `${a.offsetTop + aHt / 2}px`;
+  historyH3.forEach((h) => {
+    h.style.height = `${aHt}px`;
+  });
+});
+historyOrangeText.forEach((w, idx) => {
+  w.addEventListener('mouseover', () => {
+    historyHoverLook[idx].style.top = `${historyText[idx].offsetTop}px`;
+    historyHoverLook[idx].style.height = `${historyText[idx].clientHeight}px`;
+
+    maskContainer.style.webkitMaskSize = `0vw`;
+    cursorSize = 0;
+  });
+  w.addEventListener('mouseout', () => {
+    historyHoverLook[idx].style.top = `${
+      historyText[idx].offsetTop + historyText[idx].clientHeight / 2
+    }px`;
+    historyHoverLook[idx].style.height = `0px`;
+
+    maskContainer.style.webkitMaskSize = `2.4vw`;
+    cursorSize = 2.4;
+  });
+});
+
+// fixed icon Event
+const logo = document.querySelectorAll('.container .logo');
+const vW = document.documentElement.clientWidth;
+console.log(vW);
+document.addEventListener('mouseover', (e) => {
+  logo[1].addEventListener('mousemove', (lo) => {
+    // console.log(logo[0]);
+    logo[0].style.transform = `translate(${e.clientX - (vW * 6.083) / 100}px, ${
+      e.clientY - (vW * 6.083) / 100
+    }px)`;
+    logo[0].style.fill = `rgb(235, 89, 57)`;
+    logo[1].style.transform = `translate(${e.clientX - (vW * 6.083) / 100}px, ${
+      e.clientY - (vW * 6.083) / 100
+    }px)`;
+  });
+});
+logo[1].addEventListener('mouseout', () => {
+  // console.log(logo[0]);
+  logo[0].style.transform = `translate(0px, 0px)`;
+  logo[0].style.fill = `rgb(183, 171, 152)`;
+  logo[1].style.transform = `translate(0px, 0px)`;
+});
