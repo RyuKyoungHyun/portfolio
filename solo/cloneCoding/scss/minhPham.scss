@@ -1,10 +1,10 @@
 @charset "utf-8";
 
 /* 변수 선언 */
-$mainFont: "AvanG", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-$subFont: "proximaNova", system-ui, -apple-system, BlinkMacSystemFont,
-  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+$mainFont: 'AvanG', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$subFont: 'proximaNova', system-ui, -apple-system, BlinkMacSystemFont,
+  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
   sans-serif;
 
 $colorBasic: rgb(183, 171, 152);
@@ -41,6 +41,42 @@ body {
   background-color: $colorBackBlack;
   line-height: 1;
   letter-spacing: -0.15vw;
+  .startPage {
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: $colorBackBlack;
+    display: grid;
+    place-items: center;
+    .content-box {
+      transition: 0.5s;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      img {
+        width: 4vw;
+      }
+      .startBtn {
+        margin-top: 3vw;
+        text-align: center;
+        border: 1px solid $colorBasic;
+        padding: 1vw 3.5vw 1vw 4vw;
+        border-radius: 3vw;
+        font-size: 1.2vw;
+        letter-spacing: 0.5vw;
+        text-transform: uppercase;
+        display: flex;
+        gap: 15px;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          background-color: $colorBasic;
+          color: $colorBackBlack;
+        }
+      }
+    }
+  }
   .container {
     overflow: hidden;
     // 기본적인 스타일변경, 클래스명으로 값 조정
@@ -170,7 +206,7 @@ body {
           position: relative;
           z-index: 1;
           &:before {
-            content: "minh pham";
+            content: 'minh pham';
             @include headLine;
             font-size: $fontSize17;
           }
@@ -188,7 +224,7 @@ body {
           padding: $space278 0;
           @include marginLeft;
           &:before {
-            content: "about me";
+            content: 'about me';
             @include headLine;
           }
           .textLine {
@@ -213,7 +249,7 @@ body {
         font-size: $fontSize155;
         line-height: 0.85;
         &:before {
-          content: "what i do";
+          content: 'what i do';
           @include headLine;
           @include marginLeft;
         }
@@ -255,12 +291,12 @@ body {
         }
       }
       .experience {
-        background: url("../images/work-2400.jpg") no-repeat 50% / cover;
+        background: url('../images/work-2400.jpg') no-repeat 50% / cover;
         // background-position-y: 50%;
         padding: $space278 0;
         .content-box {
           &:before {
-            content: "experience";
+            content: 'experience';
             @include headLine;
             @include marginLeft;
           }
@@ -272,7 +308,7 @@ body {
         &:before {
           position: absolute;
           bottom: 100%;
-          content: "history";
+          content: 'history';
           @include headLine;
           @include marginLeft;
         }
@@ -296,7 +332,7 @@ body {
                 padding: $space52;
                 letter-spacing: -0.12vw;
                 &:after {
-                  content: "fantasy interactive";
+                  content: 'fantasy interactive';
                   font-family: $subFont;
                   letter-spacing: 0;
                   margin-top: $space17;
@@ -330,7 +366,7 @@ body {
                 padding: $space52;
                 letter-spacing: -0.12vw;
                 &:after {
-                  content: "fantasy interactive";
+                  content: 'fantasy interactive';
                   font-family: $subFont;
                   letter-spacing: 0;
                   margin-top: $space17;
@@ -345,7 +381,7 @@ body {
       .clients {
         padding: $space278 0;
         &:before {
-          content: "clients";
+          content: 'clients';
           @include headLine;
           @include marginLeft;
         }
@@ -445,7 +481,7 @@ body {
           @include marginLeft;
           margin-right: $space323;
           &:before {
-            content: "what they said";
+            content: 'what they said';
             @include headLine;
             padding-bottom: $space33;
           }
@@ -504,7 +540,7 @@ body {
       }
       .myMotto {
         text-align: center;
-        background: url("../images/banner-bottom-2400.jpg") no-repeat 50% /
+        background: url('../images/banner-bottom-2400.jpg') no-repeat 50% /
           cover;
         padding: $space278 0;
         h2 {
@@ -513,7 +549,7 @@ body {
           margin: 0 auto;
           text-transform: uppercase;
           &:before {
-            content: "my motto";
+            content: 'my motto';
             font-size: $fontSize17;
             display: block;
             letter-spacing: 0.5vw;
@@ -522,7 +558,7 @@ body {
           &:after {
             font-family: $subFont;
             font-weight: bold;
-            content: "dieter rams";
+            content: 'dieter rams';
             text-transform: capitalize;
             font-size: $fontSize17;
             display: block;
@@ -556,7 +592,7 @@ body {
             display: flex;
             align-items: center;
             &:before {
-              content: url("../images/ic-contact-link.svg");
+              content: url('../images/ic-contact-link.svg');
               margin-bottom: 1vw;
               margin-right: $space17;
             }
