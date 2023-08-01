@@ -1,11 +1,62 @@
 const start = document.querySelector('.startPage');
 const startContent = document.querySelector('.startPage .content-box');
 const startBtn = document.querySelector('.startPage .startBtn');
+const startImg = document.querySelector(' .startPage img');
+const firstText = document.querySelector('.firstScreen h2');
+const startGage = document.querySelectorAll('.startPage svg circle');
+const percent = document.querySelector('.startPage .percent');
+let totalLeng = startGage[0].getTotalLength();
+startGage[0].style.strokeDasharray = totalLeng;
+startGage[0].style.strokeDashoffset = totalLeng;
+startGage[1].style.strokeDasharray = totalLeng;
+startGage[1].style.strokeDashoffset = totalLeng;
+let i = 0;
+const percentEvent = () => {
+  if (i <= 100) {
+    percent.textContent = `${i}%`;
+    i++;
+  }
+};
+window.addEventListener('load', () => {
+  const draw1 = () => {
+    setInterval(percentEvent, 10);
+    startGage[0].style.transition = `1s`;
+    startGage[0].style.strokeDashoffset = 0;
+  };
+  setTimeout(draw1, 1000);
+  const draw2 = () => {
+    startGage[1].style.transition = `1s`;
+    startGage[1].style.strokeDashoffset = 0;
+  };
+  setTimeout(draw2, 2000);
+  const buttonAppear = () => {
+    startGage[0].style.display = 'none';
+    startGage[1].style.display = 'none';
+    percent.style.opacity = '0';
+    percent.style.transform = 'translateY(-100%)';
+    startBtn.style.opacity = '1';
+    startBtn.style.transform = 'translateY(-100%)';
+    startImg.style.transform = 'translateY(-100%)';
+  };
+  setTimeout(buttonAppear, 3000);
+});
 startBtn.addEventListener('click', () => {
+  scrollTo({
+    top: 0,
+  });
   startContent.style.opacity = `0`;
 
   function fixStart() {
-    start.style.display = `none`;
+    console.log(start);
+    start.style.backgroundColor = `transparent`;
+    const none = () => {
+      start.style.display = `none`;
+    };
+    const pageEvent = () => {
+      firstText.classList.add('active');
+    };
+    setTimeout(none, 500);
+    setTimeout(pageEvent, 800);
   }
   setTimeout(fixStart, 1000);
 });
@@ -299,7 +350,7 @@ const planetText = document.querySelectorAll(
 const planetOrangeText = document.querySelectorAll(
   '.container.orange .planetList .textLine'
 );
-
+const planetImg = document.querySelector('.container.dark .planetList img');
 planetText.forEach((a) => {
   const aHt = a.clientHeight;
   a.nextElementSibling.style.top = `${a.offsetTop + aHt / 2}px`;
@@ -321,6 +372,9 @@ planetOrangeText.forEach((w, idx) => {
     maskContainer.style.webkitMaskSize = `2.4vw`;
     cursorSize = 2.4;
   });
+});
+document.addEventListener('scroll', () => {
+  planetImg.style.transform = `translateX(-50%) rotate(${scrollY / 12}deg)`;
 });
 
 //history
@@ -373,6 +427,7 @@ document.addEventListener('mouseover', (e) => {
       e.clientY - (vW * 6.083) / 100
     }px)`;
     logo[0].style.fill = `rgb(235, 89, 57)`;
+    logo[1].style.fill = `#0d0d0d`;
     logo[1].style.transform = `translate(${e.clientX - (vW * 6.083) / 100}px, ${
       e.clientY - (vW * 6.083) / 100
     }px)`;
@@ -495,14 +550,12 @@ const fixedOrangeLists = document.querySelectorAll(
 const fixedDarkLists = document.querySelectorAll(
   '.container.dark .fixed-footer a'
 );
-console.log(fixedDarkLists);
 const fixedListTop = document.querySelector(
   '.container .fixed-footer ul'
 ).offsetTop;
 
 // console.log(fixedListTop);
 fixedOrangeLists.forEach((li, idx) => {
-  console.log(li.offsetTop);
   li.addEventListener('mousemove', (e) => {
     e.target.style.transform = `translate(${cursorX - (vW * 5.483) / 100}px,${
       cursorY - (fixedListTop + e.target.offsetTop)
@@ -515,4 +568,24 @@ fixedOrangeLists.forEach((li, idx) => {
     e.target.style.transform = `translate(0px,0px)`;
     fixedDarkLists[idx].style.transform = `translate(0px,0px)`;
   });
+});
+
+//sound hover 효과
+const fixedOrangeSound = document.querySelector(
+  '.container.orange footer .sound'
+);
+const fixedDarkSound = document.querySelector(
+  '.container.dark footer .sound .opacity'
+);
+fixedOrangeSound.addEventListener('mouseover', () => {
+  fixedDarkSound.style.opacity = '1';
+
+  maskContainer.style.webkitMaskSize = `0vw`;
+  cursorSize = 0;
+});
+fixedOrangeSound.addEventListener('mouseout', () => {
+  fixedDarkSound.style.opacity = '0.5';
+
+  maskContainer.style.webkitMaskSize = `2.4vw`;
+  cursorSize = 2.4;
 });

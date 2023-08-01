@@ -29,7 +29,9 @@ $space17: 0.885vw;
 $space11: 0.573vw;
 $space6: 0.313vw;
 html {
-  scroll-behavior: unset;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 // html {
 //   scroll-behavior: smooth;
@@ -48,16 +50,32 @@ body {
     height: 100%;
     background-color: $colorBackBlack;
     display: grid;
+    opacity: 1;
     place-items: center;
+    transition: 0.5s;
+    svg {
+      position: absolute;
+      width: 30vw;
+      transform: rotate(-90deg);
+      z-index: -1;
+    }
     .content-box {
       transition: 0.5s;
       display: flex;
       flex-flow: column;
       align-items: center;
+      .percent {
+        font-size: 1.5vw;
+        margin-bottom: $space88;
+        letter-spacing: 0;
+        transition: 0.5s;
+      }
       img {
-        width: 4vw;
+        width: 5vw;
+        transition: 0.5s;
       }
       .startBtn {
+        opacity: 0;
         margin-top: 3vw;
         text-align: center;
         border: 1px solid $colorBasic;
@@ -68,6 +86,7 @@ body {
         text-transform: uppercase;
         display: flex;
         gap: 15px;
+        transition: 1s;
         cursor: pointer;
         transition: 0.5s;
         &:hover {
@@ -79,6 +98,7 @@ body {
   }
   .container {
     overflow: hidden;
+    -webkit-user-select: none;
     // 기본적인 스타일변경, 클래스명으로 값 조정
     .block {
       display: block;
@@ -210,8 +230,22 @@ body {
             @include headLine;
             font-size: $fontSize17;
           }
-          .block:is(:nth-child(1), :nth-child(2)) {
+          .block {
+            overflow: hidden;
+            .down {
+              transition: 1s;
+              transform: translateY(100%);
+            }
+          }
+          .block:is(:nth-child(2), :nth-child(3)) {
             color: $colorOrangered;
+          }
+          &.active {
+            .block {
+              .down {
+                transform: translateY(0%);
+              }
+            }
           }
         }
       }
@@ -388,6 +422,15 @@ body {
         @include lineEvent;
       }
       .planetList {
+        img {
+          position: absolute;
+          top: -10%;
+          left: 50%;
+          transform: translateX(-50%) rotate3d(0, 0, 0, 45deg);
+          width: 50vw;
+          z-index: -1;
+          opacity: 1;
+        }
         ul {
           text-transform: uppercase;
           font-size: $fontSize155;
