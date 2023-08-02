@@ -1,4 +1,7 @@
-# portfolio
+# 류경현의 포트폴리오 
+
+### Repository History
+
 2023-06-08 || portfollio 레퍼지토리 생성
 2023-06-13 || solo 파트 solo_web 모바일버전 진행중
 2023-06-16 || solo 파트 solo_web 개인정보입력양식 높이 수정 필요
