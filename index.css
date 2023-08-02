@@ -943,6 +943,12 @@ main #project2 .text .page-explain .description .medium {
 main #project2 .text .page-explain .description .accent {
   background-color: #b8ffd7;
 }
+main #project2 .text .page-explain .problem .description h5:last-of-type {
+  margin-top: 2.5vw;
+}
+main #project2 .text .page-explain .problem .description .low:last-of-type {
+  margin-top: 3vw;
+}
 
 /* 3 */
 main #project3 .site-enter .button-deco {

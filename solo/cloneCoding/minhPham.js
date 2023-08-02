@@ -1,3 +1,4 @@
+// 시작페이지
 const start = document.querySelector('.startPage');
 const startContent = document.querySelector('.startPage .content-box');
 const startBtn = document.querySelector('.startPage .startBtn');
@@ -10,36 +11,32 @@ startGage[0].style.strokeDasharray = totalLeng;
 startGage[0].style.strokeDashoffset = totalLeng;
 startGage[1].style.strokeDasharray = totalLeng;
 startGage[1].style.strokeDashoffset = totalLeng;
-let i = 0;
-const percentEvent = () => {
-  if (i <= 100) {
+for (let i = 0; i <= 100; i++) {
+  const percentEvent = () => {
     percent.textContent = `${i}%`;
-    i++;
-  }
+  };
+  setTimeout(percentEvent, i * 10 + 1000);
+}
+const draw1 = () => {
+  startGage[0].style.transition = `1s`;
+  startGage[0].style.strokeDashoffset = 0;
 };
-window.addEventListener('load', () => {
-  const draw1 = () => {
-    setInterval(percentEvent, 10);
-    startGage[0].style.transition = `1s`;
-    startGage[0].style.strokeDashoffset = 0;
-  };
-  setTimeout(draw1, 1000);
-  const draw2 = () => {
-    startGage[1].style.transition = `1s`;
-    startGage[1].style.strokeDashoffset = 0;
-  };
-  setTimeout(draw2, 2000);
-  const buttonAppear = () => {
-    startGage[0].style.display = 'none';
-    startGage[1].style.display = 'none';
-    percent.style.opacity = '0';
-    percent.style.transform = 'translateY(-100%)';
-    startBtn.style.opacity = '1';
-    startBtn.style.transform = 'translateY(-100%)';
-    startImg.style.transform = 'translateY(-100%)';
-  };
-  setTimeout(buttonAppear, 3000);
-});
+setTimeout(draw1, 1000);
+const draw2 = () => {
+  startGage[1].style.transition = `1s`;
+  startGage[1].style.strokeDashoffset = 0;
+};
+setTimeout(draw2, 2000);
+const buttonAppear = () => {
+  startGage[0].style.display = 'none';
+  startGage[1].style.display = 'none';
+  percent.style.opacity = '0';
+  percent.style.transform = 'translateY(-100%)';
+  startBtn.style.opacity = '1';
+  startBtn.style.transform = 'translateY(-100%)';
+  startImg.style.transform = 'translateY(-100%)';
+};
+setTimeout(buttonAppear, 3000);
 startBtn.addEventListener('click', () => {
   scrollTo({
     top: 0,
@@ -61,6 +58,7 @@ startBtn.addEventListener('click', () => {
   setTimeout(fixStart, 1000);
 });
 
+// 메인 페이지 영역
 addEventListener('scroll', () => {
   // console.log(scrollY);
   const firstVideoPoint = document.querySelector('.firstScreen video');

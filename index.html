@@ -472,16 +472,16 @@
             <figcaption>Minh Pham<span class="page-number"><span class="now">1</span>/<span
                   class="total">1</span></span></figcaption>
             <div class="img-box">
-              <img src="./images/clone1.png" alt="임시 이미지">
-              <img src="./images/clone2.png" alt="임시 이미지">
-              <img src="./images/clone3.png" alt="임시 이미지">
-              <img src="./images/clone4.png" alt="임시 이미지">
+              <img src="./images/clone1.png" alt="MinhPham 시작화면">
+              <img src="./images/clone2.png" alt="메인페이지 최상단">
+              <img src="./images/clone3.png" alt="돋보기효과로 숨겨진텍스트가 드러남">
+              <img src="./images/clone4.png" alt="연도별 테마">
             </div>
           </figure>
           <div class="text">
             <div class="img-explain">
-              <div class="type">개인프로젝트 / 한개 남은 사이트</div>
-              <div class="period">작업기간 :<span>2023-06-09 ~ 2023-08-03</span></div>
+              <div class="type">개인프로젝트 / 클론코딩</div>
+              <div class="period">작업기간 :<span>2023-07-20 ~ 2023-08-03</span></div>
               <div class="tech">사용기술 :
                 <span>
                   <span>&lt;</span><span>HTML5</span><span>&gt;</span>
@@ -494,49 +494,20 @@
               <div class="grid goal">
                 <h3>작업목표</h3>
                 <div class="description">
-                  <h4>한개 남은 사이트</h4>
-                </div>
-              </div>
-              <div class="grid design">
-                <h3>디자인</h3>
-                <div class="description">
-                  <div class="concept">#한<span>#개</span></div>
-                  <h4 class="flex-center">
-                    <svg class="high" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 14H2V12H4V10H6V6H4V4H2V2H0V-9.53674e-07H4V2H6V4H8V6H10V10H8V12H6V14H4V16H0V14Z" />
-                    </svg>
-                    Color
-                  </h4>
-                  <div class="color-box enter">
-                    <div class="color">#202020</div>
-                    <div class="color">#F3F3F3</div>
-                    <div class="color">#C3C3C3</div>
-                    <div class="color">#F99D18</div>
-                  </div>
-                  <div class="detail enter low">한개 남은 사이트</div>
-                  <h4 class="flex-center">
-                    <svg class="high" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 14H2V12H4V10H6V6H4V4H2V2H0V-9.53674e-07H4V2H6V4H8V6H10V10H8V12H6V14H4V16H0V14Z" />
-                    </svg>
-                    Font
-                  </h4>
-                  <div class="font-line enter">
-                    <span>남</span>
-                    <span>은</span>
-                    <span>사</span>
-                    <span>이</span>
-                    <span>트</span>
-                  </div>
-                  <div class="detail enter low">한개 남은 사이트</div>
-                  <h4 class="accent">한개 남은 사이트</h4>
+                  <h4>클론코딩을 하며 사이트의 다양한 동작구현들을 배워보기</h4>
                 </div>
               </div>
               <div class="grid publishing">
                 <h3>퍼블리싱</h3>
                 <div class="description">
                   <ul>
-                    <li class="low">한개 남은 사이트
-                    </li>
+                    <li class="low">mask-image 돋보기 효과</li>
+                    <li class="low">'scrollTo' 를 이용한 메뉴의 부드러운 이동</li>
+                    <li class="low">마우스의 좌표값을 활용한 mousemove 효과</li>
+                    <li class="low">증감연산자와 'setInterval'을 사용해 0%에서 100%까지 순차적으로 출력</li>
+                    <li class="low">svg circle 드로잉 효과 </li>
+                    <li class="low">JavaScript: mouseover/mouseout 이벤트 효과</li>
+                    <li class="low">'setTimeout'을 통한 시작 이벤트 구현</li>
                   </ul>
                 </div>
               </div>
@@ -545,34 +516,71 @@
                 <div class="description">
                   <h4 class="flex-center"><svg class="high" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
                       <path d="M0 14H2V12H4V10H6V6H4V4H2V2H0V-9.53674e-07H4V2H6V4H8V6H10V10H8V12H6V14H4V16H0V14Z" />
-                    </svg>한개 남은 사이트</h4>
+                    </svg>커서를 올리면 숨겨진 텍스트 보이게 하기</h4>
                   <h5 class="flex-center">
                     <svg class="medium" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
                     </svg>
-                    한개 남은 사이트
+                    Promblem 1. mask-image 활용하기
                   </h5>
-                  <p class="low">한개 남은 사이트
+                  <p class="low">'숨겨진 텍스트를 어떻게 보이게할까'에 대한 고민을 많이 하였습니다. 마스크 이미지를 써야겠다는 생각은
+                    했지만
+                    <span class="block">제가 생각하던 방식보다는 복잡했습니다. 컨테이너 블록을 하나로 처리를
+                      하려 했지만</span>
+                    <span class="block">두개의 컨테이너가 필요하다는 것을 알았고, 보여지는 컨테이너와 숨겨진 컨테이너를 두개를 만들었습니다.</span>
+                    <span class="block">CSS를 통해 숨겨질 컨테이너에 mask-image의 값을 주고</span>
+                    <span class="block">커서에 맞춰 보여지게 이미지의 position 값에 마우스좌표를 대입하였습니다.</span>
+                  </p>
+                  <h5 class="flex-center">
+                    <svg class="medium" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
+                    </svg>
+                    Promblem 2. mouseover 효과 적용 시키기
+                  </h5>
+                  <p class="low">숨겨진 컨테이너가 z-index를 통해 상단에 위치하다보니 마우스의 선택을 받는 것도 숨겨진 컨테이너였습니다.
+                    <span class="block">여기서 생기는 문제들이 기존 CSS로 쉽게 해결할 수 있던
+                      hover의 효과들을 쓰기가 힘들어졌고,</span>
+                    <span class="block">JavaScript를 통해 제어를 해야했습니다. 숨겨진 컨테이너에 mouseover가 됐을 때,</span>
+                    <span class="block">보여지는 컨테이너에 적용이 되도록 요소를
+                      탐색해서 원하는 스타일을 넣었습니다.</span>
+                  </p>
+                  <h5 class="flex-center">
+                    <svg class="medium" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
+                    </svg>
+                    Promblem 3. mouseover시 중앙부터 열리기
+                  </h5>
+                  <p class="low">마우스를 올렸을 때 중앙부터 펼쳐지는 것을 구현하고 싶었습니다.
+                    <span class="block">그래서 jQuery의 show()를 통해서 구현할까 싶었지만 슬라이드처럼 작동했습니다.</span>
+                    <span class="block">그래서 height의 값을
+                      통해 구현을 하기로 했습니다. position의 top 값을 높이의 기존의 높이의 반만큼 적용시키고</span>
+                    <span class="block">height를 0에서 기존의 높이로 돌아가게 하였습니다. 작동하는 것은 위로
+                      올라가면서 높이가 커지는거지만</span>
+                    <span class="block">보이기엔 중앙부터 열리는 것으로 보였습니다.</span>
+
                   </p>
                   <h4 class="flex-center"><svg class="high" viewBox="0 0 10 16" xmlns="http://www.w3.org/2000/svg">
                       <path d="M0 14H2V12H4V10H6V6H4V4H2V2H0V-9.53674e-07H4V2H6V4H8V6H10V10H8V12H6V14H4V16H0V14Z" />
-                    </svg>한개 남은 사이트</h4>
+                    </svg>0에서 100까지 순차적으로 올라가기</h4>
                   <h5 class="flex-center"><svg class="medium" viewBox="0 0 16 15" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
-                    </svg>한개 남은 사이트</h5>
-                  <p class="low">한개 남은 사이트</span>
+                    </svg>Promblem 1. for문 이용하기</h5>
+                  <p class="low">반복적으로 출력되는 값이라 생각되어 처음에는 for문을 사용하려고 했습니다.
+                    <span class="block">for문으로는 적용하기에 콘솔에는 0~100까지 출력은 되지만 너무 짧은 찰나라
+                      브라우저에서는</span>
+                    <span class="block">0에서 100으로 바로 넘어갔습니다. 그래서 if문을 통해 setInterval을 사용을 해보았습니다.</span>
                   </p>
-                  <h5 class="flex-center"><svg class="medium" viewBox="0 0 16 15" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <rect x="15.0713" width="15" height="15" transform="rotate(90 15.0713 0)" />
-                    </svg>한개 남은 사이트</h5>
-                  <p class="low">한개 남은 사이트
+                  <p class="low">적용이 잘 되었지만, 가끔씩 넘버링이 되는 속도가 달라져서
+                    일관적이지 못했습니다. 그래서 다시 for문을 생각하다
+                    <span class="block">for문 안에 함수와 함께 setTimout의 시간을 for문의 증감되는 i 변수를 이용해볼까라는 생각을 하였습니다.</span>
+                    <span class="block">결과적으로 if문보다 식도 간단해지고 작동도 변함없이 지속되었습니다.</span>
                   </p>
                 </div>
               </div>
             </div>
-            <a href="#" target="_blank" class="site-enter">사이트 바로가기<span class="button-deco"><span></a>
+            <a href="./solo/cloneCoding/minhPham.html" target="_blank" class="site-enter">사이트 바로가기<span
+                class="button-deco"><span></a>
           </div>
         </div>
       </article>
@@ -714,9 +722,18 @@
             </figcaption>
             <div class="img-box">
               <img src="./images/independent1.png" alt="자립해냄 앱 이미지">
-              <img src="./images/independent2.png" alt="메인 홈 ppt 자료">
-              <img src="./images/independent3.png" alt="지원시설과 경로들의 페이지 모습들>
-              <img src=" ./images/independent4.png" alt="자립준비 사이트와 추가 경로들의 페이지 모습들">
+              <img src="./images/independent2.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent3.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent4.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent5.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent6.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent7.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent8.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent9.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent10.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent11.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent12.png" alt="자립해냄 앱 이미지">
+              <img src="./images/independent13.png" alt="자립해냄 앱 이미지">
             </div>
           </figure>
           <div class="text">
@@ -724,8 +741,7 @@
               <div class="type">팀프로젝트 / 앱 리디자인</div>
               <div class="period">작업기간 :<span>2023-04-24 ~ 2023-05-30</span></div>
               <div class="tech">사용기술 :
-                <span>
-                  <span>&lt;</span><span>HTML5</span><span>&gt;</span>
+                <span><span>&lt;</span><span>HTML5</span><span>&gt;</span>
                   <span>{</span><span>CSS3</span><span>}</span>
                   <span>[</span><span>JavaScript</span><span>]</span>
                 </span>
