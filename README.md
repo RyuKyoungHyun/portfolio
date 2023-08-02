@@ -1,5 +1,5 @@
 <style>
-  p {margin-top:10px;font-size: 20px;}
+  p {font-size: 24px}
 </style>
 
 # 류경현의 포트폴리오
